@@ -1,0 +1,11 @@
+Ingénieur IA Générative et Agentique - CDI - Hybride
+Concevoir, développer et déployer des solutions d'IA générative et d'IA agentique.
+Développer des assistants IA, des pipelines RAG et GraphRAG ainsi que des workflows mono-agent ou multi-agents.
+Créer des services Python robustes, des API et des modules backend réutilisables.
+Intégrer les solutions IA aux systèmes d'entreprise, bases de données, référentiels documentaires.
+Réaliser des preuves de concept, des MVP et des pilotes pouvant évoluer vers une mise en production.
+Développer des connecteurs, bibliothèques de prompts, outils d'évaluation et mécanismes de protection.
+Prévenir les risques liés aux injections de prompts, à la protection des données et au contrôle des accès.
+Profil : LLM et prompt engineering, architectures RAG, bases de données vectorielles,
+développement backend et API, Git, tests et CI/CD, déploiement cloud, évaluation et observabilité.
+Frameworks : LangChain, LangGraph, CrewAI, Hugging Face.
