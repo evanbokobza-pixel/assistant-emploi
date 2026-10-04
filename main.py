@@ -40,7 +40,10 @@ def lire_offre(id_offre: int):
 
 @app.post("/offres", status_code=201)
 async def ajouter_offre(offre: NouvelleOffre):
-    resultat = await analyser(offre.texte)
+    try:
+        resultat = await analyser(offre.texte)
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"Échec de l'analyse : {e}")
     id_offre = enregistrer(offre.texte, resultat)
     return {"id": id_offre, "analyse": resultat}
 
