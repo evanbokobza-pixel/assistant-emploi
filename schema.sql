@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS offres (
     url TEXT,
     texte_complet TEXT NOT NULL,
     score INTEGER,
-    analyse_ia TEXT,
+    analyse_ia JSONB,
     date_ajout TIMESTAMPTZ DEFAULT now()
 );
 

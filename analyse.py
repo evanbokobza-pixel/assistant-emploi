@@ -3,6 +3,7 @@ import json
 from claude_agent_sdk import query, ClaudeAgentOptions, ResultMessage
 from db import get_connection
 from recherche import rechercher
+from psycopg.types.json import Jsonb
 from pathlib import Path
 
 
@@ -15,10 +16,14 @@ Règles :
 - Réponds uniquement avec un objet JSON valide, sans aucun texte autour."""
 
 FORMAT = """{
+  "titre": "intitulé du poste",
+  "entreprise": "nom de l'entreprise, ou non précisé",
+  "lieu": "ville, ou non précisé",
+  "contrat": "CDI, CDD, freelance..., ou non précisé",
   "score": nombre de 0 à 100 (compétences 50 points, niveau d'expérience 30, préférences 20),
   "resume": "deux phrases",
   "exigences_bloquantes": ["..."],
-  "points_forts": [{"point": "...", "preuve": "nom de la source"}],
+  "points_forts": [{"point": "...", "preuve": "nom de la source, ou cv"}],
   "manques": ["..."],
   "adequation_preferences": {"lieu": "...", "contrat": "...", "teletravail": "...", "salaire": "..."},
   "a_reviser": ["sujets à préparer pour l'entretien"],
@@ -77,10 +82,25 @@ async def analyser(offre):
     return json.loads(texte[debut:fin + 1])
 
 
+
+def enregistrer(offre, resultat):
+    with get_connection() as conn:
+        return conn.execute(
+            """INSERT INTO offres
+               (titre, entreprise, lieu, contrat, texte_complet, score, analyse_ia)
+               VALUES (%s, %s, %s, %s, %s, %s, %s)
+               RETURNING id""",
+            (resultat["titre"], resultat["entreprise"], resultat["lieu"],
+             resultat["contrat"], offre, resultat["score"], Jsonb(resultat)),
+        ).fetchone()[0]
+
+
 if __name__ == "__main__":
     offre = open("offre_test.txt", encoding="utf-8").read()
     resultat = asyncio.run(analyser(offre))
     print(json.dumps(resultat, indent=2, ensure_ascii=False))
+    id_offre = enregistrer(offre, resultat)
+    print(f"Offre enregistrée avec l'id {id_offre}")
 
 
 
