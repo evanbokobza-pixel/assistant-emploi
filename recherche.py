@@ -4,17 +4,17 @@ from db import get_connection
 model = SentenceTransformer("intfloat/multilingual-e5-base")
 
 
-def rechercher(texte_offre, k=5, max_par_source=2, candidats=20):
+def rechercher(texte_offre, k=5, max_par_source=2, candidats=20, exclure=()):
     vecteur = model.encode(f"query: {texte_offre}", normalize_embeddings=True)
 
-    # 1. On récupère large : les 20 chunks les plus proches
     with get_connection() as conn:
         lignes = conn.execute(
             """SELECT source, contenu, 1 - (embedding <=> %s) AS similarite
                FROM chunks
+               WHERE source <> ALL(%s)
                ORDER BY embedding <=> %s
                LIMIT %s""",
-            (vecteur, vecteur, candidats),
+            (vecteur, list(exclure), vecteur, candidats),
         ).fetchall()
 
     # 2. On garde au plus 2 chunks par fichier, jusqu'à en avoir k
