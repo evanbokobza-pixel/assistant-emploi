@@ -33,3 +33,10 @@ CREATE TABLE IF NOT EXISTS candidatures (
     message TEXT,
     notes TEXT
 );
+
+CREATE TABLE IF NOT EXISTS chunks (
+    id SERIAL PRIMARY KEY,
+    source TEXT NOT NULL,          -- le fichier d'origine : cv, projet_rag...
+    contenu TEXT NOT NULL,         -- le texte du morceau
+    embedding vector(768) NOT NULL -- son vecteur, 768 nombres
+);
