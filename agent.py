@@ -1,4 +1,5 @@
 import asyncio
+from pathlib import Path
 from claude_agent_sdk import (
     tool, create_sdk_mcp_server, query, ClaudeAgentOptions,
     AssistantMessage, UserMessage, TextBlock, ToolUseBlock, ToolResultBlock,
@@ -96,8 +97,26 @@ async def lire_offre(args):
     return {"content": [{"type": "text", "text": detail}]}
 
 
+# Outil 4 : le CV complet. Il est court : pas besoin de RAG, on le donne en entier.
+CV = Path(__file__).parent / "data" / "parcours" / "cv.md"
+
+
+@tool(
+    "lire_cv",
+    "Renvoie le CV complet du candidat : intitulés de poste, entreprises, dates, "
+    "types de contrat, compétences et formation. À utiliser pour toute question "
+    "sur les dates, le statut ou la chronologie du parcours.",
+    {"type": "object", "properties": {}, "required": []},
+)
+async def lire_cv(args):
+    texte = CV.read_text(encoding="utf-8") if CV.exists() else "CV introuvable."
+    return {"content": [{"type": "text", "text": texte}]}
+
+
 serveur = create_sdk_mcp_server(
-    name="emploi", version="1.0.0", tools=[chercher_offres, rechercher_parcours, lire_offre]
+    name="emploi",
+    version="1.0.0",
+    tools=[chercher_offres, rechercher_parcours, lire_offre, lire_cv],
 )
 
 options = ClaudeAgentOptions(
@@ -116,6 +135,7 @@ options = ClaudeAgentOptions(
         "mcp__emploi__chercher_offres",
         "mcp__emploi__rechercher_parcours",
         "mcp__emploi__lire_offre",
+        "mcp__emploi__lire_cv",
     ],
     max_turns=12,
 )
@@ -139,6 +159,7 @@ async def main(question):
 
 
 QUESTIONS = [
+    # Une seule question pour économiser ta limite d'utilisation
     "Qu'est-ce que j'ai fait chez Altaroad ?",
 ]
 
