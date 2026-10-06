@@ -101,8 +101,12 @@ serveur = create_sdk_mcp_server(
 )
 
 options = ClaudeAgentOptions(
-    system_prompt="Tu aides un candidat à suivre sa recherche d'emploi. "
-                  "Utilise tes outils pour répondre, n'invente rien.",
+    system_prompt=(
+        "Tu aides un candidat à suivre sa recherche d'emploi. "
+        "Tutoie toujours le candidat. "
+        "Utilise tes outils pour répondre, n'invente rien. "
+        "Si une information n'apparaît pas dans les résultats des outils, dis-le clairement."
+    ),
     tools=[],                                       # aucun outil intégré (pas de Bash, pas de fichiers)
     mcp_servers={"emploi": serveur},                # uniquement NOS outils
     allowed_tools=[
@@ -132,8 +136,7 @@ async def main(question):
 
 
 QUESTIONS = [
-    # Une seule question pour économiser ta limite d'utilisation
-    "Parmi mes offres, laquelle correspond le mieux à mon travail sur les skieurs chez Faktory ?",
+    "Qu'est-ce que j'ai fait chez Altaroad ?",
 ]
 
 
