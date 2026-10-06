@@ -1,0 +1,45 @@
+Description du poste
+Développeur IA Agentique & RAG (Python / LangChain)
+
+Expérience de mise en production requise
+
+Objectif de la mission
+Vous integrez, optimisez et déployez des cas d'usage IA avancés. L'enjeu principal est de disposer d'un développeur capable d'aller au-delà du simple développement de prototypes ou de PoC, et de construire de véritables solutions robustes destinées à la production.
+
+Environnement technique
+L'ensemble de la stack IA est développé en Python. Les technologies et concepts utilisés comprennent notamment :
+Python /LangChain / Architectures RAG / Bases de données vectorielles Qdrant / Onyx II / Orchestration de prompts / Agents IA / API OpenAI
+
+Points qui seront challengés
+
+Les candidats devront notamment pouvoir être interrogés sur :
+?Leur expérience réelle de mise en production d'applications IA
+?Leur capacité à passer d'un PoC à une solution robuste en production
+?La conception et l'optimisation d'une architecture RAG
+?Leur utilisation de LangChain
+?La gestion des bases de données vectorielles
+?La gestion des comportements inattendus des LLMs
+?La sécurisation des agents IA
+?Les risques liés aux prompt injections
+?Les mécanismes mis en place pour limiter ces risques
+?La mise en oeuvre de guardrails
+?Leur manière de gérer les imprévus et incidents en production
+
+Profil candidat:
+Compétences attendues
+
+Le profil recherché doit disposer de :
+? Une expertise solide en Python
+? Une expérience éprouvée des architectures RAG
+? Une maîtrise de LangChain
+? Une expérience de manipulation et d'intégration de bases de données vectorielles
+? Une expérience concrète de mise en production de solutions IA
+? Une forte sensibilité aux problématiques de sécurité liées aux applications IA
+? Une compréhension des comportements probabilistes des LLMs
+? Une capacité à sécuriser des agents et des chaînes de traitement IA
+
+Ce qu'on recherche vraiment
+
+Un profil pragmatique et orienté delivery : capable de faire passer un POC RAG en solution de production fiable, de choisir les bons outils vectoriels selon le contexte, et de mesurer concrètement la qualité d'un pipeline de retrieval.
+
+La curiosité sur les évolutions rapides de l'IA (agents, MCP, multimodal) est un vrai plus.

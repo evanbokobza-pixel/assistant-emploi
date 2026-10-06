@@ -1,0 +1,66 @@
+Ingénieur Python - Fastapi - IA - Rag & Recherche Vectorielle H/F
+Celad 
+Super recruteur
+Paris - 75
+Freelance
+
+Pas de salaire renseigné
+ESN
+Télétravail partiel
+Bac +5
+Secteur informatique • ESN
+Exp. 5 ans
+À noter sur ce job
+Vous avez ces compétences ? Cliquez dessus pour les ajouter rapidement à votre profil !
+
+Coche ou décoche cette compétence sur votre profil candidat et valide automatiquement le formulaire.
+
+Intelligence artificielle
+Coche ou décoche cette compétence sur votre profil candidat et valide automatiquement le formulaire.
+
+Python
+Les missions du poste
+Envie d'un nouveau challenge... CELAD vous attend ! 🚀
+
+Nous poursuivons notre développement et recherchons actuellement un(e) Ingénieur IA Python / RAG pour intervenir chez l'un de nos clients, acteur majeur du secteur juridique et fiscal.
+
+🚀 Votre rôle
+
+Au sein d'une équipe technique spécialisée dans les solutions digitales et l'intelligence artificielle, vous participerez au développement et à l'évolution de solutions basées sur l'IA générative.
+
+Vos principales missions seront notamment de :
+
+Concevoir et développer des applications et services IA en Python ;
+
+Développer des APIs avec FastAPI ;
+
+Concevoir et améliorer des architectures RAG (Retrieval-Augmented Generation) ;
+
+Travailler sur la vectorisation, les embeddings et la recherche sémantique ;
+
+Intégrer et exploiter des LLM dans des applications métier ;
+
+Participer aux choix techniques liés au stockage et à la recherche vectorielle ;
+
+Contribuer à l'amélioration de la qualité, de la pertinence et des performances des solutions IA.
+
+Le profil recherché
+De formation supérieure en informatique, vous disposez d'une expérience significative en développement Python et dans la conception de solutions basées sur l'IA générative.
+
+Vous maîtrisez notamment :
+
+Python
+
+FastAPI
+
+RAG
+
+LLM / IA générative
+
+Embeddings / vectorisation
+
+Recherche sémantique / vectorielle
+
+Une expérience avec FAISS, Qdrant, pgvector, Pinecone, Weaviate, Milvus ou Chroma serait un réel plus.
+
+Vous êtes à l'aise dans des environnements techniques exigeants et souhaitez intervenir sur des sujets IA concrets, avec une forte dimension d'innovation.

@@ -1,0 +1,50 @@
+Vision par Ordinateur et IA au Service de la Navigation Aérienne H/F
+Orange
+Meylan - 38
+Stage
+
+Pas de salaire renseigné
+6 mois
+Bac +5
+Industrie high-tech • Telecom
+À noter sur ce job
+Vous avez ces compétences ? Cliquez dessus pour les ajouter rapidement à votre profil !
+
+Coche ou décoche cette compétence sur votre profil candidat et valide automatiquement le formulaire.
+
+Intelligence artificielle
+Coche ou décoche cette compétence sur votre profil candidat et valide automatiquement le formulaire.
+
+Python
+Les missions du poste
+La détection et la caractérisation des nuages représentent un enjeu pour l'aide à la navigation aérienne. La couverture, la localisation et la structure des formations nuageuses fournissent des informations utiles.
+
+Ce stage s'inscrit dans le projet Climate Impulse, qui ambitionne de réaliser le premier tour du monde sans escale et sans émission. Il vise à explorer des méthodes d'analyse automatique d'images pour détecter et décrire les conditions nuageuses observées depuis un aéronef.
+
+Les méthodes classiques de vision par ordinateur, comme les modèles YOLO, détectent rapidement des objets, mais nécessitent des données annotées. Les modèles de langage multimodaux peuvent, quant à eux, interpréter une image et en produire une description contextualisée. Ils pourraient compléter ces méthodes en localisant les nuages ou en décrivant la scène dans son ensemble.
+
+Le stage comparera ces deux approches, évaluera leurs performances et leurs limites, et étudiera leur complémentarité pour l'analyse de scènes nuageuses en contexte d'aide à la navigation.
+
+Travail à réaliser
+
+1. État de l'art et données
+Réaliser une revue bibliographique sur la détection, la classification et la caractérisation des nuages par vision par ordinateur. Identifier, sélectionner ou enrichir des jeux de données d'images du ciel, aériennes ou embarquées, et étudier la création de données synthétiques adaptées aux cas d'usage.
+
+2. Vision par ordinateur traditionnelle
+Mettre en ouvre en Python/PyTorch un ou plusieurs modèles de référence de type YOLO. Les entraîner et les évaluer pour détecter et/ou classer les formations nuageuses, en mesurant leurs performances, leur robustesse aux variations visuelles et leur temps d'inférence.
+
+3. Modèles multimodaux
+Tester plusieurs modèles, via API et/ou localement pour les modèles open weight. Concevoir des requêtes produisant une description structurée : présence et couverture des nuages, localisation, caractéristiques observables et incertitude. Évaluer la pertinence, la fiabilité, la latence et les limites des modèles.
+
+4. Comparaison et démonstrateur
+Comparer les approches selon leur précision, robustesse, explicabilité, coût et temps de calcul. Étudier une approche hybride combinant détection locale et interprétation de la scène par un modèle multimodal. Réaliser un démonstrateur visualisant les détections et les descriptions produites.
+
+Voir moins
+Le profil recherché
+Étudiant(e) en dernière année d'école d'ingénieur ou de master en intelligence artificielle.
+Intérêt pour le Deep Learning, la Computer Vision;
+Curiosité pour les LLM multimodaux et les approches d'IA générative ;
+Rigueur expérimentale
+Bonnes compétences en Python;
+Infos complémentaires
+Tickets restaurant

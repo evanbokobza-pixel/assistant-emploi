@@ -1,0 +1,12 @@
+Description du poste
+Dans le cadre d?un projet chez l'un de nos clients, nous recherchons un Développeur Python Backend expérimenté, capable d?intervenir sur des environnements à forte volumétrie et sur des sujets liés à l?IA générative.
+
+Vous aurez pour missions : Concevoir, développer et tester des applications backend en Python. Optimiser les performances des applications et gérer des volumétries importantes. Participer au développement de solutions autour des LLM et architectures RAG.
+
+Mettre en ?uvre et maintenir les processus de CI/CD. Participer au déploiement et à la maintenance des différents environnements. Travailler en méthodologie Agile avec les équipes techniques et fonctionnelles.
+
+Assurer le support applicatif, l?analyse et le suivi des incidents. Contribuer à l?amélioration continue de la qualité, de la performance et de la fiabilité des applications.
+
+Profil candidat: De formation supérieure, vous avez au moins 8 ans d?expérience en développement Python, avec idéalement 2 à 3 ans d?expérience sur des sujets LLM / RAG. Vous avez Solide expérience en développement backend et vous maîtrisez les problématiques de performance, d?optimisation et de forte volumétrie. Bonne maîtrise des environnements CI/CD et du déploiement applicatif.
+
+Expérience du travail en méthodologie Agile. Capacité à collaborer efficacement avec des équipes techniques et fonctionnelles.

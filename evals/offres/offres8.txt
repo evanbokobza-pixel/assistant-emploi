@@ -1,0 +1,161 @@
+Ingénieur IA / GenAI – LLM, RAG & Agents IA
+
+Dans le cadre d’un projet autour de l’IA générative, nous recherchons un Ingénieur IA / GenAI pour concevoir, développer et industrialiser des solutions basées sur les LLM et les agents IA.
+
+Vos missions :
+
+Concevoir et développer des solutions GenAI / LLM
+
+Développer des agents IA et workflows agentiques
+
+Concevoir et implémenter des architectures RAG
+
+Intégrer les modèles IA aux applications via API
+
+Développer principalement en Python
+
+Travailler sur le prompt engineering et l'orchestration des LLM
+
+Mettre en place embeddings et bases vectorielles
+
+Évaluer la qualité, la performance et la fiabilité des réponses
+
+Industrialiser les solutions : CI/CD, monitoring, sécurité et observabilité
+
+Accompagner les POC jusqu’à leur mise en production
+
+Compétences recherchées :
+
+Python
+
+LLM / GenAI
+
+RAG
+
+Agents IA / Agentic AI
+
+LangChain / LangGraph ou équivalent
+
+OpenAI / Azure OpenAI / Anthropic / modèles open source
+
+FastAPI / APIs REST
+
+Vector databases / embeddings
+
+Docker, Git, CI/CD
+
+MLOps / LLMOps apprécié
+
+Fine-tuning / PEFT / LoRA apprécié
+
+📍 Île-de-France / Hybride
+
+📅 Mission longue durée
+
+Profil recherché
+Ingénieur IA / GenAI – LLM, RAG & Agents IA
+Dans le cadre d’un projet autour de l’IA générative, nous recherchons un Ingénieur IA / GenAI pour concevoir, développer et industrialiser des solutions basées sur les LLM et les agents IA.
+
+Vos missions :
+
+Concevoir et développer des solutions GenAI / LLM
+
+Développer des agents IA et workflows agentiques
+
+Concevoir et implémenter des architectures RAG
+
+Intégrer les modèles IA aux applications via API
+
+Développer principalement en Python
+
+Travailler sur le prompt engineering et l'orchestration des LLM
+
+Mettre en place embeddings et bases vectorielles
+
+Évaluer la qualité, la performance et la fiabilité des réponses
+
+Industrialiser les solutions : CI/CD, monitoring, sécurité et observabilité
+
+Accompagner les POC jusqu’à leur mise en production
+
+Compétences recherchées :
+
+Python
+
+LLM / GenAI
+
+RAG
+
+Agents IA / Agentic AI
+
+LangChain / LangGraph ou équivalent
+
+OpenAI / Azure OpenAI / Anthropic / modèles open source
+
+FastAPI / APIs REST
+
+Vector databases / embeddings
+
+Docker, Git, CI/CD
+
+MLOps / LLMOps apprécié
+
+Fine-tuning / PEFT / LoRA apprécié
+
+📍 Île-de-France / Hybride
+📅 Mission longue durée
+
+Environnement de travail
+Ingénieur IA / GenAI – LLM, RAG & Agents IA
+
+Dans le cadre d’un projet autour de l’IA générative, nous recherchons un Ingénieur IA / GenAI pour concevoir, développer et industrialiser des solutions basées sur les LLM et les agents IA.
+
+Vos missions :
+
+Concevoir et développer des solutions GenAI / LLM
+
+Développer des agents IA et workflows agentiques
+
+Concevoir et implémenter des architectures RAG
+
+Intégrer les modèles IA aux applications via API
+
+Développer principalement en Python
+
+Travailler sur le prompt engineering et l'orchestration des LLM
+
+Mettre en place embeddings et bases vectorielles
+
+Évaluer la qualité, la performance et la fiabilité des réponses
+
+Industrialiser les solutions : CI/CD, monitoring, sécurité et observabilité
+
+Accompagner les POC jusqu’à leur mise en production
+
+Compétences recherchées :
+
+Python
+
+LLM / GenAI
+
+RAG
+
+Agents IA / Agentic AI
+
+LangChain / LangGraph ou équivalent
+
+OpenAI / Azure OpenAI / Anthropic / modèles open source
+
+FastAPI / APIs REST
+
+Vector databases / embeddings
+
+Docker, Git, CI/CD
+
+MLOps / LLMOps apprécié
+
+Fine-tuning / PEFT / LoRA apprécié
+
+📍 Île-de-France / Hybride
+
+📅 Mission longue durée

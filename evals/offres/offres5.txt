@@ -1,0 +1,166 @@
+Description de l'entreprise
+
+CITECH recrute !
+
+CITECH est une ESN à taille humaine spécialisée dans les métiers de l'IT et de la transformation numérique.
+
+Nous accompagnons nos clients dans la réalisation de projets stratégiques autour du développement applicatif, du Cloud, de la Data et de l'intelligence artificielle.
+
+Nos consultants interviennent dans des environnements technologiques exigeants, où innovation et qualité de service occupent une place centrale.
+
+Nous privilégions un accompagnement de proximité, des missions stimulantes et le développement des compétences.
+
+Notre ambition : permettre à chaque consultant de contribuer à des projets à forte valeur ajoutée tout en construisant durablement son parcours professionnel.
+
+Description du poste
+
+Vous souhaitez contribuer au déploiement de l'intelligence artificielle générative à grande échelle, tout en intervenant sur des problématiques de développement, de RAG et d'industrialisation ?
+
+Nous recherchons un(e) Ingénieur IA Générative / Développeur Python (H/F) pour rejoindre une équipe spécialisée dans la conception et l'exploitation de solutions GenAI.
+
+Vous participerez à l'évolution d'une plateforme d'intelligence artificielle basée sur SFEIR RAISE, destinée à plusieurs centaines d'utilisateurs et intégrant des assistants IA, des agents intelligents et des services accessibles par API.
+
+Vous contribuerez également à la transition de son hébergement Azure vers une infrastructure On-premise.
+
+Vos principales missions :
+Développement et évolution de la plateforme
+
+Maintenir et faire évoluer les composants applicatifs Python et React.
+
+Développer de nouvelles fonctionnalités pour les assistants IA et leur exposition via API.
+
+Améliorer les interfaces utilisateurs et les mécanismes de gestion des accès.
+
+Participer à l'évolution des services Back-End et au suivi de leur utilisation.
+
+Ingénierie IA générative
+
+Concevoir et paramétrer des assistants IA répondant aux besoins des équipes métiers.
+
+Développer et optimiser les pipelines RAG (Retrieval-Augmented Generation).
+
+Améliorer les processus d'ingestion et d'exploitation des documents.
+
+Exploiter LangChain et LangGraph pour faire évoluer les fonctionnalités d'IA générative.
+
+Participer à l'évaluation des réponses et à l'amélioration des performances des assistants.
+
+Accompagner les utilisateurs dans l'optimisation de leurs prompts.
+
+Industrialisation et exploitation
+
+Participer à la migration de la plateforme depuis Azure vers une infrastructure interne.
+
+Contribuer à la conteneurisation et au déploiement des services.
+
+Diagnostiquer les dysfonctionnements applicatifs et assurer leur résolution.
+
+Maintenir la documentation technique et fonctionnelle.
+
+Accompagner les utilisateurs dans l'adoption des nouveaux services IA.
+
+Environnement technique
+
+Plateforme GenAI : SFEIR RAISE
+
+Développement Back-End : Python, FastAPI
+
+Frameworks IA : LangChain, LangGraph
+
+IA documentaire : RAG, Docling, OCR
+
+Front-End :React, TypeScript, TanStack
+
+Traitements asynchrones :Celery, Redis
+
+Bases de données : PostgreSQL, Pgvector
+
+Évaluation et observabilité IA : RAGAS, LangFuse
+
+Infrastructure : Docker, Kubernetes
+
+Cloud : Microsoft Azure AI Foundry
+
+CI/CD : GitHub, Azure DevOps
+
+Qualifications
+
+Formation
+
+Formation supérieure en informatique, développement logiciel, intelligence artificielle ou équivalent.
+
+Expérience
+
+Vous justifiez idéalement de 1 à 3 années d'expérience en développement logiciel ou ingénierie IA.
+
+Une expérience professionnelle d'au moins 6 mois sur SFEIR RAISE ou sur sa stack technique spécifique est indispensable.
+
+Compétences techniques
+
+Excellente maîtrise de Python et du développement Back-End.
+
+Expérience concrète dans la conception de solutions IA générative.
+
+Bonne connaissance de LangChain, LangGraph et des architectures RAG.
+
+Capacité à intervenir sur une application React / TypeScript.
+
+Maîtrise des environnements conteneurisés Docker / Kubernetes.
+
+Connaissance des mécanismes d'exposition de services via API.
+
+Expérience dans l'analyse d'incidents et la maintenance applicative.
+
+Compétences fonctionnelles
+
+Vous savez traduire des besoins utilisateurs en fonctionnalités concrètes et accompagner l'adoption de solutions d'intelligence artificielle.
+
+Une connaissance du secteur de la protection sociale constitue un atout supplémentaire.
+
+Qualités personnelles
+
+Autonomie et capacité d'investigation.
+
+Excellent relationnel et sens du service.
+
+Pédagogie auprès d'interlocuteurs non techniques.
+
+Rigueur dans le développement et la documentation.
+
+Esprit d'équipe et capacité à partager vos connaissances.
+
+Les + du poste
+
+✔ Une plateforme d'IA générative utilisée à grande échelle.
+
+✔ Un environnement technique associant Python, RAG, LangChain et LangGraph.
+
+✔ Une expérience concrète sur SFEIR RAISE.
+
+✔ Une équipe réunissant des expertises techniques et fonctionnelles.
+
+✔ Un projet de transformation d'infrastructure Cloud vers On-premise.
+
+✔ Des missions variées, du développement au support utilisateur.
+
+✔ Une visibilité directe sur les usages métiers de l'intelligence artificielle.
+
+✔ Deux jours de télétravail par semaine.
+
+Informations supplémentaires
+
+Pourquoi rejoindre Citech ?
+
+En rejoignant notre réseau de talents, vous pourrez être sollicité(e) en priorité pour des projets correspondant précisément à votre expertise, notamment auprès de grands groupes industriels implantés dans la région grenobloise.
+
+Notre objectif est de construire avec vous un positionnement cohérent sur des missions à forte valeur ajoutée autour de :
+
+l'industrialisation, la performance des moyens de production, l'automatisation, le Lean, les investissements industriels et l'accélération du time-to-market.
+
+Vous souhaitez participer aux prochaines transformations industrielles du bassin grenoblois ?
+
+Transmettez-nous votre CV afin d'échanger sur votre parcours, vos compétences et vos prochaines opportunités.
+
+Poste situé à PARIS
+
+Salaire : 40 K€ - 50 K€ Brut/an selon expérience et expertise

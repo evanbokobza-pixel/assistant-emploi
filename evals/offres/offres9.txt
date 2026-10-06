@@ -1,0 +1,72 @@
+À propos de l’offre d’emploi
+#StormYourCareer Rejoins STORM GROUP et construis ta carrière avec nous !
+
+Révèle l’intelligence visuelle et orchestre la reconnaissance documentaire par les modèles multimodaux
+
+Dans le cadre d’un programme stratégique de traitement automatisé de documents, notre partenaire recherche un(e) Computer Vision Engineer confirmé(e). Ton rôle sera technique et à forte valeur ajoutée : tu concevras, développeras et déploieras des modèles de vision par ordinateur, d’analyse d’images et de modèles multimodaux (Vision-Language Models) au sein d’un environnement sécurisé imposant de strictes exigences de confidentialité, de reproductibilité et de traçabilité.
+
+Ton futur environnement
+
+Tu évolueras au sein d’un pôle d’ingénierie IA et Computer Vision d’excellence, en lien direct avec les data scientists, les ingénieurs MLOps et les équipes métiers. Dans un cadre de recherche appliquée et d’industrialisation sur serveurs de calcul accéléré (GPU), tu travailleras sur des corpus documentaires massifs et hétérogènes. C’est le cadre parfait pour concevoir des chaînes de traitement d’images complexes, exploiter la puissance des VLMs de dernière génération et intégrer des algorithmes de pointe au sein d’architectures conteneurisées.
+
+Tes missions clés
+
+Traitement d’Images & Modélisation Multimodale (Mode R&D & BUILD) :
+
+Développer des pipelines de prétraitement et d’analyse d’images avancés : redressement géométrique, binarisation adaptative, recalage et alignement de documents complexes (OpenCV, Python). 
+Concevoir et entraîner des architectures de segmentation sémantique, de détection d’objets et d’extraction de zones d’intérêt (YOLO, PyTorch). 
+Mettre en œuvre et optimiser des solutions de reconnaissance optique et manuscrite de caractères (OCR / HTR). 
+Explorer, évaluer et intégrer des modèles Vision-Language (VLM, écosystème Hugging Face) via des techniques de prompting multimodal et le fine-tuning de modèles open-weight. 
+Définir des métriques d’évaluation sur mesure, caractériser les erreurs et implémenter des scores de confiance robustes pour la validation automatique. 
+
+Industrialisation, Qualité & Déploiement GPU (Mode RUN & MLOps) :
+
+Industrialiser et conteneuriser les modèles de vision (Docker, Kubernetes) optimisés pour l’exécution sur infrastructures GPU et interconnectés avec du stockage objet (S3). 
+Assurer le tracking des expérimentations, le versioning des poids et la reproductibilité des entraînements via MLflow et Git. 
+Automatiser les contrôles qualité continus et benchmarker les résultats obtenus face aux jeux de données de référence (ground truth). 
+Restituer clairement les avancées algorithmiques et les gains de performance auprès des équipes techniques et des référents métiers. 
+
+Ton profil
+
+Formation : Diplôme d’Ingénieur, Bac+5 universitaire (Master 2) ou Doctorat (PhD) spécialisé en Computer Vision, Deep Learning, traitement d’images ou Machine Learning. 
+Expérience : Tu justifies d’une expérience confirmée de 1 à 2 ans en vision par ordinateur et Deep Learning appliqué à l’image. 
+Expertise Vision & Deep Learning Impérative :
+Excellente maîtrise de la programmation en Python et du framework PyTorch. 
+Parfaite maîtrise des bibliothèques de traitement d’images et de vision (OpenCV, YOLO, pandas). 
+Solide expérience en technologies de reconnaissance de texte et d’écriture (OCR / HTR). 
+Pratique des modèles multimodaux (VLM), de l’écosystème Hugging Face et des méthodologies de fine-tuning. 
+Culture d’Ingénierie & Infrastructure :
+Maîtrise des environnements conteneurisés (Docker, Kubernetes) et de l’exploitation des cartes GPU. 
+Suivi d’expérimentation avec MLflow, stockage objet (S3) et gestion de versions (Git). 
+Langues : Anglais professionnel opérationnel. 
+ Tes atouts
+
+Rigueur Scientifique et Sens du Détail : Approche méthodique indispensable pour concevoir des métriques d’évaluation fiables et garantir une traçabilité totale des traitements. 
+Excellence du Code : Respect strict des standards de développement logiciel (modularité, tests, code propre et reproductible). 
+Pédagogie et Esprit de Synthèse : Capacité à expliquer clairement le fonctionnement des modèles et les choix de calibration auprès d’interlocuteurs non-experts. 
+
+Nos avantages
+
+Remboursement des titres de transport à hauteur de 75%.
+Tickets restaurant pris en charge par STORM GROUP à hauteur de 50% (10,5€ / jour).
+Accès Gymlib / Wellpass (sport et bien-être).
+Contrat Santé / Prévoyance mis en place auprès de la compagnie Alan.
+Formation continue : Accès à Udemy Business.
+Prime de cooptation, prime d’intéressement et de participation.
+Deux à trois jours de télétravail par semaine.
+
+5 raisons de nous rejoindre
+
+Parcours sur mesure : Co-construis une trajectoire professionnelle unique, adaptée à tes ambitions.
+Missions Stratégiques : Interviens sur des projets d’envergure, en parfaite cohérence avec ton expertise.
+Suivi Dédié : Bénéficie d’un pilotage annuel structuré pour garantir ta progression continue.
+Excellence Continue : Développe tes compétences au quotidien au sein d’un écosystème exigeant.
+Performance Durable : Évolue dans un cadre où l’exigence métier respecte ton équilibre de vie.
+
+Notre processus de sélection
+
+Échange introductif avec un chargé de recrutement.
+Entretien métier avec évaluation technique approfondie.
+Rencontre finale pour validation du fit et projection sur la mission.
+
+Storm Group encourage une culture inclusive et multiculturelle où la diversité des profils nourrit notre intelligence collective. En rejoignant la Storm Team, tu intègres un écosystème engagé qui place le développement de tes talents au cœur de sa stratégie, tout en agissant concrètement pour la solidarité et la réduction de l'empreinte environnementale, aussi bien au sein de nos bureaux que dans les projets d'envergure que nous menons chez nos clients.
