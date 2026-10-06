@@ -66,11 +66,27 @@ Solution : premier changement, le modèle Pydantic est transmis comme schéma au
 
 Résultat : les réponses invalides sont corrigées automatiquement dans la grande majorité des cas. Sinon, l'utilisateur reçoit une erreur propre au lieu d'un plantage.
 
+## Évaluation
+
+J'ai construit un jeu de test de 9 offres réelles : 2 sans rapport avec mon profil, 4 pièges (la technique correspond mais une exigence bloque : 5 ou 8 ans d'expérience, stage, freelance, technologie indispensable), 1 offre moyenne et 2 bonnes offres. Pour chaque offre, j'ai écrit mes attentes avant de lancer l'outil : les sources qui doivent ressortir de la recherche, une fourchette de score, les recommandations acceptées et la présence ou non d'une exigence bloquante.
+
+Eval de la recherche (sans appel à Claude, donc gratuite) : je mesure le rappel, c'est-à-dire la part des sources attendues retrouvées dans les 5 passages. Résultat : 95 % en moyenne sur 7 offres. Les offres de vision font bien ressortir mes projets de vision, et les offres d'IA générative mes projets RAG.
+
+Eval de l'analyse : un script lance l'analyse sur les 9 offres, vérifie le score, la recommandation et les exigences bloquantes, et enregistre toutes les réponses dans un fichier horodaté pour pouvoir les relire et comparer deux versions sans relancer Claude.
+
+La première mesure m'a appris deux choses. D'abord, l'outil recommandait bien « passer » pour plusieurs offres, contrairement à ce que je pensais après mes tests à l'œil. Ensuite, Claude mélangeait les exigences bloquantes avec de simples manques, et il recommandait parfois de postuler malgré une exigence bloquante qu'il avait lui-même détectée. Mon premier script ne voyait pas ce défaut : il ne vérifiait pas que la liste restait vide quand il n'y avait pas d'exigence bloquante. J'ai corrigé la mesure avant de corriger l'outil.
+
+J'ai ensuite fait un seul changement dans le prompt : une définition précise d'une exigence bloquante (explicite, non remplie et éliminatoire, sinon c'est un manque) et la règle « au moins une exigence bloquante entraîne passer ». Résultat, par rapport à la référence mesurée avec les mêmes règles : exigences bloquantes de 6/9 à 9/9, recommandations de 8/9 à 9/9, scores de 6/9 à 9/9.
+
+L'eval m'a aussi fait changer d'avis : Claude notait plus sévèrement que moi les offres d'IA générative, parce que mon expérience dans ce domaine vient de projets personnels et pas d'un poste. Je suis d'accord avec ce raisonnement, donc j'ai ajusté ces fourchettes. Je n'ai pas touché aux fourchettes manquées de 2 ou 3 points, qui relèvent du bruit.
+
 ## Limites et pistes d'amélioration
 
-Recommandation trop optimiste : le modèle ne recommande jamais de passer une offre, même avec un score faible. Le prompt ne dit pas quand il faut passer. Piste : ajouter une règle explicite (une exigence bloquante non remplie entraîne « passer ») et la vérifier par des tests.
+Un 9/9 à relativiser : il vient d'un seul lancement, alors qu'un LLM ne donne pas toujours la même réponse (une offre est pile à la limite de sa fourchette). Piste : relancer l'eval plusieurs fois et mesurer la stabilité des scores et des recommandations.
 
-Pas encore d'évaluation : la qualité des analyses est jugée à l'œil, sans mesure. Piste : construire un jeu de 8 à 10 offres variées avec les résultats attendus (passages retrouvés, exigences bloquantes, fourchette de score, recommandation) et mesurer l'outil dessus.
+Risque de sur-ajustement : j'ai réglé le prompt en regardant ces 9 offres, rien ne garantit qu'il marche aussi bien sur des offres qu'il n'a jamais vues. Piste : ajouter un deuxième jeu d'offres jamais utilisé pour régler le prompt, et mesurer l'outil dessus.
+
+Mesures encore incomplètes : le rappel est facile à obtenir avec seulement 6 sources, et il ne voit pas les passages hors sujet (la recherche renvoie toujours 5 passages, même pour une offre de chargé RH). Le contenu des exigences bloquantes n'est pas vérifié non plus, seulement leur présence. Piste : mesurer aussi la précision de la recherche, ajouter un seuil de pertinence et une règle de prompt pour ignorer les passages hors sujet.
 
 Saisie manuelle : je colle les offres à la main. Piste : récupérer les offres automatiquement depuis une source officielle, comme l'API de France Travail.
 
