@@ -28,7 +28,7 @@ Pipeline RAG : mes fichiers de parcours sont découpés en chunks, puis transfor
 
 Choix : le CV est mis entier dans le prompt, et seul le détail des projets passe par la recherche RAG.
 
-Raisons : au début, tout passait par le RAG. Claude ne recevait que quelques passages du CV et a pris un CDI chez Faktory pour un stage, parce que le passage qui disait « CDI » n'avait pas été retrouvé. Le CV est court et tient dans le prompt, donc Claude a maintenant une vue complète de mon parcours. Ma règle : on ne met en RAG que ce qui ne tient pas dans le prompt.
+Raisons : au début, tout passait par le RAG. Claude ne recevait que quelques passages du CV et a pris mon expérience chez Faktory pour un stage, parce que le bon passage n'avait pas été retrouvé. Le CV est court et tient dans le prompt, donc Claude a maintenant une vue complète de mon parcours. Ma règle : on ne met en RAG que ce qui ne tient pas dans le prompt.
 
 ### 2. Une sortie structurée validée par un schéma Pydantic
 
