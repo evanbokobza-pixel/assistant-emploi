@@ -56,8 +56,48 @@ async def rechercher_parcours(args):
     return {"content": [{"type": "text", "text": "\n\n".join(passages) or "Aucun passage."}]}
 
 
+# Outil 3 : le détail d'une offre précise (SQL, par son id).
+@tool(
+    "lire_offre",
+    "Renvoie le détail d'une offre enregistrée à partir de son id (#numéro donné par "
+    "chercher_offres) : lieu, contrat, résumé, exigences bloquantes, points forts, manques, "
+    "recommandation et début du texte de l'offre.",
+    {
+        "type": "object",
+        "properties": {
+            "id": {"type": "integer", "description": "Identifiant de l'offre, par exemple 2 pour #2"},
+        },
+        "required": ["id"],
+    },
+)
+async def lire_offre(args):
+    with get_connection() as conn:
+        ligne = conn.execute(
+            "SELECT titre, entreprise, lieu, contrat, score, analyse_ia, texte_complet "
+            "FROM offres WHERE id = %s",
+            (args["id"],),
+        ).fetchone()
+    if ligne is None:
+        return {"content": [{"type": "text", "text": f"Aucune offre avec l'id {args['id']}."}]}
+
+    titre, entreprise, lieu, contrat, score, analyse, texte = ligne
+    analyse = analyse or {}
+    points_forts = [p.get("point", "") for p in analyse.get("points_forts", [])]
+    detail = (
+        f"#{args['id']} {titre} ({entreprise}), score {score}\n"
+        f"Lieu : {lieu} | Contrat : {contrat}\n"
+        f"Résumé : {analyse.get('resume', 'non précisé')}\n"
+        f"Exigences bloquantes : {analyse.get('exigences_bloquantes', [])}\n"
+        f"Points forts : {points_forts}\n"
+        f"Manques : {analyse.get('manques', [])}\n"
+        f"Recommandation : {analyse.get('recommandation', 'non précisé')}\n\n"
+        f"Début du texte de l'offre :\n{(texte or '')[:1500]}"  # garde-fou : texte tronqué
+    )
+    return {"content": [{"type": "text", "text": detail}]}
+
+
 serveur = create_sdk_mcp_server(
-    name="emploi", version="1.0.0", tools=[chercher_offres, rechercher_parcours]
+    name="emploi", version="1.0.0", tools=[chercher_offres, rechercher_parcours, lire_offre]
 )
 
 options = ClaudeAgentOptions(
@@ -65,8 +105,12 @@ options = ClaudeAgentOptions(
                   "Utilise tes outils pour répondre, n'invente rien.",
     tools=[],                                       # aucun outil intégré (pas de Bash, pas de fichiers)
     mcp_servers={"emploi": serveur},                # uniquement NOS outils
-    allowed_tools=["mcp__emploi__chercher_offres", "mcp__emploi__rechercher_parcours"],
-    max_turns=8,
+    allowed_tools=[
+        "mcp__emploi__chercher_offres",
+        "mcp__emploi__rechercher_parcours",
+        "mcp__emploi__lire_offre",
+    ],
+    max_turns=12,
 )
 
 
@@ -88,8 +132,7 @@ async def main(question):
 
 
 QUESTIONS = [
-    "Combien d'offres ai-je avec un score d'au moins 60 ?",
-    "Qu'est-ce que j'ai fait chez Altaroad ?",
+    # Une seule question pour économiser ta limite d'utilisation
     "Parmi mes offres, laquelle correspond le mieux à mon travail sur les skieurs chez Faktory ?",
 ]
 
