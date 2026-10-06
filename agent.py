@@ -105,7 +105,10 @@ options = ClaudeAgentOptions(
         "Tu aides un candidat à suivre sa recherche d'emploi. "
         "Tutoie toujours le candidat. "
         "Utilise tes outils pour répondre, n'invente rien. "
-        "Si une information n'apparaît pas dans les résultats des outils, dis-le clairement."
+        "Si les premiers résultats ne contiennent pas une information utile à la réponse "
+        "(dates, type de contrat, technologies, résultats chiffrés), relance une recherche "
+        "ciblée avec d'autres mots avant de répondre, au maximum deux fois. "
+        "Si l'information reste introuvable, dis-le clairement."
     ),
     tools=[],                                       # aucun outil intégré (pas de Bash, pas de fichiers)
     mcp_servers={"emploi": serveur},                # uniquement NOS outils
