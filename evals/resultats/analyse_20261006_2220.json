@@ -1,0 +1,796 @@
+[
+  {
+    "offre": "offres1.txt",
+    "attendu": {
+      "offre": "offres1.txt",
+      "categorie": "mauvaise",
+      "sources": [],
+      "bloquante": "Master 2 RH, alternance",
+      "score_min": 0,
+      "score_max": 15,
+      "recommandations": [
+        "passer"
+      ]
+    },
+    "analyse": {
+      "titre": "Chargé RH en Alternance H/F",
+      "entreprise": "Fondation Santé des Étudiants de France",
+      "lieu": "Bouffémont (95)",
+      "contrat": "Alternance",
+      "score": 3,
+      "resume": "Cette offre d'alternance en ressources humaines (administration du personnel, GTA, recrutement) n'a aucun lien avec le profil de développeur Python et computer vision du candidat. Elle exige une préparation de Master 2 RH, que le candidat ne suit pas, et ne correspond ni au contrat CDI recherché ni aux domaines visés.",
+      "exigences_bloquantes": [
+        "Préparer un Master 2 Ressources Humaines : le candidat est diplômé d'un Master en sciences de l'ingénieur (Bac+5) et ne suit pas de formation RH",
+        "Contrat en alternance : nécessite d'être inscrit dans une formation en alternance, alors que le candidat cherche un CDI"
+      ],
+      "points_forts": [
+        {
+          "point": "Maîtrise de l'outillage informatique et de l'analyse de données, utile pour les tableaux de bord et Excel (Excel non mentionné explicitement dans le CV)",
+          "preuve": "cv"
+        },
+        {
+          "point": "Anglais courant et bonnes capacités de rédaction technique (portfolio, documentation de projets)",
+          "preuve": "cv"
+        }
+      ],
+      "manques": [
+        "Aucune expérience RH (stage ou alternance)",
+        "Pas de formation en ressources humaines (Master 2 RH requis)",
+        "Aucune connaissance démontrée en droit du travail, contrats de travail, gestion des temps et activités ou santé au travail",
+        "Pack Office/Excel non mentionné dans le CV",
+        "Aucune expérience de recrutement ou d'administration du personnel"
+      ],
+      "adequation_preferences": {
+        "lieu": "Bouffémont (95) est en Île-de-France, ce qui correspond à la zone recherchée, mais loin de Paris intra-muros",
+        "contrat": "Alternance, ne correspond pas au CDI recherché",
+        "teletravail": "non précisé",
+        "salaire": "492,22 à 1 823,03 € / mois (rémunération d'alternance) ; minimum du candidat non précisé"
+      },
+      "a_reviser": [],
+      "conseils_candidature": [
+        "Ne pas postuler : le poste est hors du domaine de compétence et des domaines visés (IA agentique, RAG, computer vision).",
+        "Concentrer la recherche sur des CDI en computer vision, RAG ou IA agentique en Île-de-France, en valorisant le projet Assistant emploi (RAG + Claude) et l'expérience Faktory/Altaroad."
+      ],
+      "recommandation": "passer"
+    },
+    "verdicts": {
+      "score": true,
+      "recommandation": true,
+      "bloquante": true
+    }
+  },
+  {
+    "offre": "offres2.txt",
+    "attendu": {
+      "offre": "offres2.txt",
+      "categorie": "mauvaise",
+      "sources": [],
+      "bloquante": "5 ans de manager caisse",
+      "score_min": 0,
+      "score_max": 15,
+      "recommandations": [
+        "passer"
+      ]
+    },
+    "analyse": {
+      "titre": "Formateur Fichier Caisse F/H",
+      "entreprise": "Groupement Mousquetaires (Intermarché & Netto, ITM AI)",
+      "lieu": "Garancière-en-Beauce (28), poste itinérant (Île-de-France, Normandie, Centre, Bourgogne)",
+      "contrat": "CDI",
+      "score": 8,
+      "resume": "Le poste est celui de formateur itinérant sur les outils de caisse et de gestion commerciale pour les points de vente Intermarché et Netto, et il exige 5 ans d'expérience comme manager caisse ou fichier en grande distribution alimentaire. Le profil du candidat, développeur Python et computer vision, n'a aucun lien avec ce métier et ne correspond ni à ses objectifs (IA agentique, RAG, computer vision) ni à l'exigence d'expérience.",
+      "exigences_bloquantes": [
+        "Au moins 5 ans d'expérience comme manager caisse / fichier dans la grande distribution alimentaire : non remplie, aucune expérience en grande distribution dans le CV",
+        "Formation Bac +2 : remplie (Bac +5), mais sans lien avec le domaine"
+      ],
+      "points_forts": [
+        {
+          "point": "Niveau de formation supérieur au Bac +2 demandé (Master, Bac +5)",
+          "preuve": "cv"
+        },
+        {
+          "point": "Autonomie et organisation, avec des missions freelance menées de bout en bout",
+          "preuve": "cv"
+        },
+        {
+          "point": "Capacité à concevoir des outils utilisables par des opérateurs non techniques",
+          "preuve": "cv"
+        },
+        {
+          "point": "CDI recherché et disponibilité immédiate, ce qui correspond au contrat et au démarrage dès que possible",
+          "preuve": "cv"
+        }
+      ],
+      "manques": [
+        "Aucune expérience en grande distribution alimentaire ni en gestion de caisse ou de fichier",
+        "Aucune expérience de management ni de formation de collaborateurs en point de vente",
+        "Aucune connaissance des outils de gestion commerciale, de caisse, d'accueil ou de services d'Intermarché",
+        "Le poste ne comporte aucun développement, IA ou computer vision, donc il ne correspond pas aux domaines visés",
+        "Poste itinérant avec déplacements sur 13 départements et nuitées à l'hôtel, base à Garancière-en-Beauce (28), hors de Paris intra-muros",
+        "Pack Office non mentionné dans le CV"
+      ],
+      "adequation_preferences": {
+        "lieu": "Partielle : la base est en Eure-et-Loir (28), hors de la zone visée, mais le poste couvre aussi Paris et l'Île-de-France en itinérance",
+        "contrat": "Conforme : CDI",
+        "teletravail": "Non précisé ; le poste est itinérant, avec ordinateur portable fourni, donc probablement peu compatible avec l'hybride",
+        "salaire": "Non précisé (salaire fixe + 13e mois, primes, statut cadre en forfait jour), sans montant"
+      },
+      "a_reviser": [
+        "Sans objet : il est déconseillé de postuler à cette offre"
+      ],
+      "conseils_candidature": [
+        "Ne pas postuler : l'exigence d'expérience en grande distribution est bloquante et le poste s'éloigne de tes objectifs (IA agentique, RAG, computer vision).",
+        "Concentrer la recherche sur des offres de développeur IA, computer vision ou RAG en CDI à Paris / Île-de-France.",
+        "Si tu cherches des opportunités chez Intermarché (ITM), regarde plutôt leurs postes en data, IA ou informatique."
+      ],
+      "recommandation": "passer"
+    },
+    "verdicts": {
+      "score": true,
+      "recommandation": true,
+      "bloquante": true
+    }
+  },
+  {
+    "offre": "offres3.txt",
+    "attendu": {
+      "offre": "offres3.txt",
+      "categorie": "piege",
+      "sources": [
+        "altaroad",
+        "faktory",
+        "canne_blanche"
+      ],
+      "bloquante": "stage, Meylan, profil étudiant",
+      "score_min": 30,
+      "score_max": 50,
+      "recommandations": [
+        "passer"
+      ]
+    },
+    "analyse": {
+      "titre": "Vision par Ordinateur et IA au Service de la Navigation Aérienne H/F",
+      "entreprise": "Orange",
+      "lieu": "Meylan (38)",
+      "contrat": "Stage (6 mois, Bac +5)",
+      "score": 52,
+      "resume": "Le stage de 6 mois à Meylan compare YOLO et LLM multimodaux pour la détection de nuages, ce qui correspond bien au profil technique (YOLO, PyTorch, Python, computer vision). Mais c'est un stage, pas un CDI, situé à Meylan et non en Île-de-France, ce qui ne correspond pas aux préférences ni au niveau d'expérience du candidat.",
+      "exigences_bloquantes": [
+        "Statut d'étudiant en dernière année d'école d'ingénieur ou de master : le candidat est diplômé (Master 2022-2024) et travaille en freelance, ce qui rend probablement le stage inaccessible (convention de stage requise)",
+        "Localisation à Meylan (Isère), hors Paris/Île-de-France, sans mention de télétravail"
+      ],
+      "points_forts": [
+        {
+          "point": "Entraînement, évaluation et intégration de modèles YOLO sur cas d'usage spécifique (détection de skieurs)",
+          "preuve": "faktory"
+        },
+        {
+          "point": "Détection de véhicules et piétons, pipeline complet de l'image à la visualisation et validation",
+          "preuve": "altaroad"
+        },
+        {
+          "point": "Python solide, PyTorch/TensorFlow, optimisation et mesure de latence en temps réel",
+          "preuve": "cv"
+        },
+        {
+          "point": "Rigueur expérimentale : tests unitaires, validation visuelle, profil d'optimisation (30 s à 1 s)",
+          "preuve": "cv"
+        },
+        {
+          "point": "Réalisation de démonstrateurs/outils de visualisation pour opérateurs (PySide6, annotation, comparaison)",
+          "preuve": "cv"
+        },
+        {
+          "point": "Expérience de vision embarquée (canne blanche DepthAI) proche d'un contexte d'aide à la navigation",
+          "preuve": "canne_blanche"
+        },
+        {
+          "point": "Usage de Claude/LLM dans un projet RAG avec sorties structurées, utile pour les prompts de description structurée",
+          "preuve": "assistant_emploi"
+        }
+      ],
+      "manques": [
+        "Aucune expérience de LLM multimodaux (VLM) en vision documentée : API, modèles open weight locaux",
+        "Pas d'expérience documentée en détection/caractérisation de nuages ou imagerie aérienne/météo",
+        "Pas de revue bibliographique/état de l'art académique ni de génération de données synthétiques documentées",
+        "Pas de comparaison formelle d'approches avec métriques de benchmark documentée"
+      ],
+      "adequation_preferences": {
+        "lieu": "Non conforme : Meylan (38) alors que les zones visées sont Paris / Île-de-France",
+        "contrat": "Non conforme : stage de 6 mois alors que le candidat recherche un CDI",
+        "teletravail": "non précisé (préférence : hybride)",
+        "salaire": "non précisé (stage, pas de salaire renseigné ; préférence : non précisé)"
+      },
+      "a_reviser": [
+        "Métriques de détection (mAP, précision/rappel, IoU) et robustesse aux variations visuelles",
+        "Entraînement YOLO (Ultralytics) sur jeux de données spécifiques, augmentation et données synthétiques",
+        "VLM/LLM multimodaux (GPT, Gemini, Qwen-VL, LLaVA) : prompts structurés, incertitude, latence",
+        "Approches hybrides détection + VLM",
+        "Jeux de données de nuages (ciel, satellite, aérien)",
+        "Projet Climate Impulse"
+      ],
+      "conseils_candidature": [
+        "Vérifier si une candidature est possible hors cadre étudiant ; sinon ne pas poursuivre, car le contrat (stage) ne correspond pas à la recherche de CDI.",
+        "Si vous postulez malgré tout, mettre en avant YOLO, Altaroad et le démonstrateur visuel, ainsi que l'usage de LLM dans l'assistant emploi.",
+        "Chercher plutôt des offres CDI en Île-de-France mêlant computer vision et LLM multimodaux/agentique, domaines visés."
+      ],
+      "recommandation": "passer"
+    },
+    "verdicts": {
+      "score": false,
+      "recommandation": true,
+      "bloquante": true
+    }
+  },
+  {
+    "offre": "offres4.txt",
+    "attendu": {
+      "offre": "offres4.txt",
+      "categorie": "piege",
+      "sources": [
+        "assistant_emploi",
+        "rag_ollama"
+      ],
+      "bloquante": "5 ans d'expérience, freelance",
+      "score_min": 35,
+      "score_max": 55,
+      "recommandations": [
+        "passer"
+      ]
+    },
+    "analyse": {
+      "titre": "Ingénieur Python - FastAPI - IA - RAG & Recherche Vectorielle H/F",
+      "entreprise": "Celad (ESN), pour un client du secteur juridique et fiscal",
+      "lieu": "Paris",
+      "contrat": "Freelance",
+      "score": 62,
+      "resume": "Le candidat a de solides bases Python et IA, et a construit un projet personnel qui couvre FastAPI, RAG, pgvector et l'usage de LLM, mais son expérience pro porte surtout sur la computer vision. Le poste demande 5 ans d'expérience et est en freelance, alors que le candidat cherche un CDI avec 2 ans d'expérience visés ; l'écart de contrat est important.",
+      "exigences_bloquantes": [
+        "Contrat freelance, alors que le candidat recherche un CDI (à confirmer : mission via ESN)",
+        "Expérience demandée de 5 ans, avec une expérience significative en IA générative : le candidat a environ 2 ans d'expérience pro, essentiellement en computer vision",
+        "Expérience professionnelle en RAG / LLM en production non démontrée (uniquement des projets personnels)"
+      ],
+      "points_forts": [
+        {
+          "point": "Python solide, avec tests unitaires, multithreading et optimisation de performances",
+          "preuve": "cv"
+        },
+        {
+          "point": "API FastAPI avec modèles Pydantic, servie par uvicorn",
+          "preuve": "assistant_emploi"
+        },
+        {
+          "point": "Pipeline RAG complet sur PostgreSQL + pgvector (chunks, embeddings, recherche des passages proches)",
+          "preuve": "assistant_emploi"
+        },
+        {
+          "point": "Intégration d'un LLM dans une application avec sortie structurée validée par schéma",
+          "preuve": "assistant_emploi"
+        },
+        {
+          "point": "RAG local avec Ollama : embeddings, stockage vectoriel, retrieval, et réflexion sur le reranking, le retrieval hybride et l'évaluation",
+          "preuve": "rag_ollama"
+        },
+        {
+          "point": "Formation Bac+5 (Master ingénieur Sorbonne) et expérience IA appliquée (PyTorch, TensorFlow, RL, vision)",
+          "preuve": "cv"
+        },
+        {
+          "point": "Basé à Paris, disponible immédiatement",
+          "preuve": "cv"
+        }
+      ],
+      "manques": [
+        "Pas d'expérience pro en IA générative / LLM / RAG : seulement des projets personnels",
+        "Pas d'expérience citée avec FAISS, Qdrant, Pinecone, Weaviate, Milvus ou Chroma (seul pgvector est pratiqué)",
+        "Expérience pro de moins de 5 ans",
+        "Le CV est orienté computer vision et vidéo, peu aligné avec le positionnement RAG / IA générative",
+        "Pas d'expérience du secteur juridique et fiscal"
+      ],
+      "adequation_preferences": {
+        "lieu": "Paris : correspond à la zone recherchée.",
+        "contrat": "Freelance, alors que le candidat recherche un CDI : ne correspond pas. Le CV indique pourtant deux missions freelance passées.",
+        "teletravail": "Télétravail partiel, ce qui correspond au télétravail hybride recherché. Les modalités exactes ne sont pas précisées.",
+        "salaire": "non précisé (pas de minimum côté candidat non plus)"
+      },
+      "a_reviser": [
+        "Architecture RAG : chunking, choix des embeddings, retrieval hybride, reranking, filtrage par métadonnées",
+        "Évaluation d'un RAG : précision du retrieval, fidélité, taux d'hallucination, latence",
+        "Comparaison des bases vectorielles (FAISS, Qdrant, Pinecone, Weaviate, Milvus, Chroma) et de pgvector (index HNSW/IVFFlat)",
+        "FastAPI : async, validation Pydantic, tests, déploiement",
+        "Prompt engineering, sorties structurées, intégration de LLM dans des applications métier",
+        "Enjeux du secteur juridique et fiscal : fiabilité, citation des sources, hallucinations",
+        "Savoir expliquer le choix « CV entier dans le prompt, RAG seulement pour ce qui ne tient pas dedans »"
+      ],
+      "conseils_candidature": [
+        "Mettre en avant le projet assistant-emploi (FastAPI, pgvector, RAG, LLM, Pydantic) et le projet RAG Ollama, en tête du CV ou du profil",
+        "Reformuler le titre du CV pour inclure Python / FastAPI / RAG / IA générative, et pas seulement computer vision",
+        "Chiffrer des résultats sur les projets RAG (qualité du retrieval, latence)",
+        "Vérifier avec Celad si un portage ou un CDI est possible, sinon décider si le freelance est acceptable",
+        "Assumer le niveau d'expérience : se présenter comme un profil de transition vision vers IA générative, avec de bonnes bases d'ingénierie",
+        "Si possible, tester rapidement Qdrant ou FAISS pour pouvoir les citer"
+      ],
+      "recommandation": "postuler en adaptant"
+    },
+    "verdicts": {
+      "score": false,
+      "recommandation": false,
+      "bloquante": true
+    }
+  },
+  {
+    "offre": "offres5.txt",
+    "attendu": {
+      "offre": "offres5.txt",
+      "categorie": "moyenne",
+      "sources": [
+        "assistant_emploi",
+        "rag_ollama"
+      ],
+      "bloquante": "6 mois sur SFEIR RAISE",
+      "score_min": 50,
+      "score_max": 70,
+      "recommandations": [
+        "passer",
+        "postuler en adaptant"
+      ]
+    },
+    "analyse": {
+      "titre": "Ingénieur IA Générative / Développeur Python (H/F)",
+      "entreprise": "CITECH (ESN, client final non précisé)",
+      "lieu": "Paris",
+      "contrat": "non précisé (poste en ESN, type de contrat non indiqué)",
+      "score": 38,
+      "resume": "Le poste porte sur une plateforme GenAI (SFEIR RAISE) avec Python/FastAPI, RAG, LangChain/LangGraph, React et Kubernetes. Le candidat a une bonne base Python et un projet RAG personnel, mais il n'a aucune expérience professionnelle GenAI ni sur SFEIR RAISE, exigence indispensable de l'offre.",
+      "exigences_bloquantes": [
+        "Expérience professionnelle d'au moins 6 mois sur SFEIR RAISE ou sa stack spécifique (indispensable) : non remplie dans le CV",
+        "Expérience concrète dans la conception de solutions IA générative en contexte professionnel : seulement des projets personnels (RAG Ollama, assistant emploi)"
+      ],
+      "points_forts": [
+        {
+          "point": "Très bonne pratique de Python et de la livraison d'applications complètes (multithreading, tests unitaires, optimisation)",
+          "preuve": "cv"
+        },
+        {
+          "point": "Compréhension de bout en bout d'un pipeline RAG (chunking, embeddings, recherche vectorielle, grounding, pistes de reranking et de retrieval hybride)",
+          "preuve": "rag_ollama"
+        },
+        {
+          "point": "Outil personnel utilisant un LLM avec sortie structurée, enregistrement des analyses, et réflexion sur l'évaluation et les tests",
+          "preuve": "assistant_emploi"
+        },
+        {
+          "point": "Niveau d'expérience cohérent avec la fourchette 1 à 3 ans (environ 2 ans en freelance et stages) et disponibilité immédiate",
+          "preuve": "cv"
+        },
+        {
+          "point": "Capacité à transformer un besoin en outil utilisable par des opérateurs, utile pour l'accompagnement des utilisateurs",
+          "preuve": "cv"
+        }
+      ],
+      "manques": [
+        "SFEIR RAISE, LangChain, LangGraph, FastAPI, Celery/Redis, PostgreSQL/Pgvector, Docling/OCR non mentionnés",
+        "React / TypeScript / TanStack absents du CV",
+        "Docker / Kubernetes et CI/CD (GitHub, Azure DevOps) non mentionnés ; Azure AI Foundry absent",
+        "RAGAS / LangFuse (évaluation et observabilité IA) : aucune pratique, l'évaluation est seulement une piste dans le projet assistant emploi",
+        "Pas d'expérience en maintenance applicative, analyse d'incidents ni exposition de services via API",
+        "Le profil est centré computer vision / robotique, pas IA générative",
+        "Pas de connaissance du secteur de la protection sociale (atout seulement)"
+      ],
+      "adequation_preferences": {
+        "lieu": "Compatible : poste à Paris, zone recherchée",
+        "contrat": "Non précisé dans l'offre (CDI recherché) ; à vérifier",
+        "teletravail": "Compatible : 2 jours de télétravail par semaine (hybride)",
+        "salaire": "40 à 50 k€ brut/an ; ton minimum n'étant pas précisé, adéquation non évaluable"
+      },
+      "a_reviser": [
+        "Architecture RAG avancée : ingestion de documents, OCR/Docling, reranking, retrieval hybride, pgvector",
+        "LangChain et LangGraph : agents, graphes d'états, outils",
+        "Évaluation de RAG avec RAGAS et observabilité avec LangFuse",
+        "FastAPI, Celery/Redis et exposition de services par API",
+        "Docker / Kubernetes et migration cloud vers on-premise",
+        "Bases de React / TypeScript",
+        "Principes de la plateforme SFEIR RAISE"
+      ],
+      "conseils_candidature": [
+        "Être transparent sur l'absence d'expérience SFEIR RAISE : l'exigence indispensable rend le succès peu probable, ne pas candidater en misant dessus",
+        "Si tu postules, mets en avant le projet RAG Ollama et l'assistant emploi, avec un dépôt GitHub et si possible une démo en LangChain/LangGraph, FastAPI et Docker",
+        "Monte rapidement un petit projet RAG avec LangGraph, pgvector, RAGAS et LangFuse pour combler l'écart",
+        "Demande à l'ESN si d'autres missions IA agentique, RAG ou computer vision à Paris correspondent mieux à ton profil",
+        "Clarifie le type de contrat (CDI) et l'identité du client final"
+      ],
+      "recommandation": "passer"
+    },
+    "verdicts": {
+      "score": false,
+      "recommandation": true,
+      "bloquante": true
+    }
+  },
+  {
+    "offre": "offres6.txt",
+    "attendu": {
+      "offre": "offres6.txt",
+      "categorie": "piege",
+      "sources": [
+        "assistant_emploi",
+        "rag_ollama"
+      ],
+      "bloquante": "8 ans d'expérience",
+      "score_min": 25,
+      "score_max": 45,
+      "recommandations": [
+        "passer"
+      ]
+    },
+    "analyse": {
+      "titre": "Développeur Python Backend expérimenté (forte volumétrie, IA générative / LLM / RAG)",
+      "entreprise": "non précisé (client final d'une société de services)",
+      "lieu": "non précisé",
+      "contrat": "non précisé",
+      "score": 38,
+      "resume": "L'offre vise un profil senior (8 ans minimum de Python) en backend à forte volumétrie avec CI/CD et LLM/RAG, alors que le candidat a environ 2 ans d'expérience professionnelle, centrée sur la computer vision et les applications desktop. Il a des bases solides en Python et une première expérience RAG en projet personnel, mais l'écart d'expérience et le manque de backend/CI/CD sont importants.",
+      "exigences_bloquantes": [
+        "Au moins 8 ans d'expérience en développement Python : environ 2 ans pour le candidat (stage mai 2024, missions freelance depuis novembre 2024)",
+        "Solide expérience en développement backend et en forte volumétrie : non démontrée dans le CV",
+        "Bonne maîtrise de CI/CD et du déploiement applicatif : non mentionnée dans le CV"
+      ],
+      "points_forts": [
+        {
+          "point": "Python en contexte professionnel, avec tests unitaires et optimisation de performance (recherche vidéo de 30 s à 1 s)",
+          "preuve": "cv"
+        },
+        {
+          "point": "Pipeline RAG complet construit en local avec Ollama (chunking, embeddings, stockage vectoriel, retrieval, génération)",
+          "preuve": "rag_ollama"
+        },
+        {
+          "point": "Application backend avec API (FastAPI/uvicorn, gestion d'erreurs 500/502) et sortie structurée Pydantic avec le SDK Claude",
+          "preuve": "assistant_emploi"
+        },
+        {
+          "point": "Traitements multithreadés, optimisation de pipelines et contraintes de performance en production",
+          "preuve": "faktory"
+        },
+        {
+          "point": "Travail en mission freelance avec équipes et refactoring/non-régression sur code existant",
+          "preuve": "faktory"
+        }
+      ],
+      "manques": [
+        "Seniorité : environ 2 ans d'expérience contre 8 ans demandés",
+        "Pas d'expérience backend professionnelle sur systèmes à forte volumétrie (bases de données, files de messages, traitements distribués)",
+        "CI/CD, déploiement et maintenance d'environnements non cités dans le CV",
+        "Expérience LLM/RAG limitée à des projets personnels, loin des 2 à 3 ans souhaités",
+        "Support applicatif et suivi d'incidents non mentionnés",
+        "Méthodologie Agile non mentionnée explicitement"
+      ],
+      "adequation_preferences": {
+        "lieu": "non précisé dans l'offre ; le candidat cherche Paris / Île-de-France, donc compatibilité à vérifier",
+        "contrat": "non précisé ; mission chez un client, possiblement via ESN ou freelance, alors que le candidat vise un CDI",
+        "teletravail": "non précisé ; le candidat souhaite de l'hybride",
+        "salaire": "non précisé (le candidat n'a pas de minimum défini)"
+      },
+      "a_reviser": [
+        "Architecture RAG avancée : retrieval hybride, reranking, évaluation de la qualité",
+        "Concevoir un backend Python performant : asyncio, FastAPI, bases de données, pagination, batch, caching",
+        "Gestion de la forte volumétrie : indexation, files de messages, traitement parallèle, profiling",
+        "CI/CD : GitHub Actions ou GitLab CI, Docker, déploiement",
+        "Bases d'agents LLM (outils, orchestration), cohérent avec le domaine visé IA agentique",
+        "Agile/Scrum et gestion du support et des incidents"
+      ],
+      "conseils_candidature": [
+        "Postuler avec réalisme : le critère des 8 ans est très éloigné de votre profil et risque d'écarter le dossier au filtre initial.",
+        "Si vous postulez, mettez en avant votre projet RAG et votre assistant emploi (API, validation de schéma, gestion d'erreurs) pour montrer vos compétences backend et LLM.",
+        "Préparez des exemples chiffrés d'optimisation de performance (30 s à 1 s) et de multithreading.",
+        "Clarifiez dès le premier échange le type de contrat, le lieu et le télétravail, non précisés dans l'offre.",
+        "Donnez la priorité à des offres plus juniors ou intermédiaires en RAG, IA agentique ou computer vision, mieux alignées avec votre profil."
+      ],
+      "recommandation": "passer"
+    },
+    "verdicts": {
+      "score": true,
+      "recommandation": true,
+      "bloquante": true
+    }
+  },
+  {
+    "offre": "offres7.txt",
+    "attendu": {
+      "offre": "offres7.txt",
+      "categorie": "moyenne",
+      "sources": [
+        "assistant_emploi",
+        "rag_ollama"
+      ],
+      "bloquante": null,
+      "score_min": 55,
+      "score_max": 75,
+      "recommandations": [
+        "postuler en adaptant"
+      ]
+    },
+    "analyse": {
+      "titre": "Développeur IA Agentique & RAG (Python / LangChain)",
+      "entreprise": "non précisé",
+      "lieu": "non précisé",
+      "contrat": "non précisé",
+      "score": 40,
+      "resume": "Le candidat a une solide base Python et une expérience de mise en production en computer vision, ainsi que des projets personnels RAG (Ollama, pgvector) et un outil utilisant Claude Agent SDK. Il manque toutefois l'expérience éprouvée en RAG, LangChain, Qdrant et sécurité des agents exigée par l'offre, qui met l'accent sur la production d'IA générative.",
+      "exigences_bloquantes": [
+        "Expérience éprouvée des architectures RAG en contexte professionnel : seulement des projets personnels/prototypes dans le parcours",
+        "Expérience concrète de mise en production de solutions IA générative/LLM : non démontrée (la production concerne la computer vision)",
+        "Maîtrise de LangChain : absente du CV et du parcours détaillé",
+        "Sécurité des agents IA, prompt injection et guardrails : aucune expérience documentée"
+      ],
+      "points_forts": [
+        {
+          "point": "Expertise Python et rigueur d'ingénierie (tests unitaires, profiling, optimisation, multithreading)",
+          "preuve": "cv"
+        },
+        {
+          "point": "Expérience de passage d'un prototype à un outil fiable et testable, avec optimisation mesurée (recherche vidéo de 30 s à 1 s)",
+          "preuve": "cv"
+        },
+        {
+          "point": "Compréhension concrète d'un pipeline RAG complet (chunking, embeddings, retrieval, génération) et pistes d'amélioration (retrieval hybride, reranking)",
+          "preuve": "rag_ollama"
+        },
+        {
+          "point": "Manipulation d'une base vectorielle (PostgreSQL/pgvector) et usage d'un LLM via SDK avec sortie structurée validée par Pydantic, API FastAPI, Docker Compose",
+          "preuve": "assistant_emploi"
+        },
+        {
+          "point": "Retour d'expérience sur les limites du RAG (passage non retrouvé menant à une mauvaise interprétation du CV), ce qui montre une sensibilité à la qualité du retrieval",
+          "preuve": "assistant_emploi"
+        },
+        {
+          "point": "Intérêt pour les agents multi-outils et curiosité sur l'évolution de l'IA",
+          "preuve": "rag_ollama"
+        }
+      ],
+      "manques": [
+        "LangChain non mentionné",
+        "Qdrant et Onyx non mentionnés (seulement pgvector en projet perso)",
+        "Pas d'expérience pro en RAG ni en agents IA en production",
+        "Pas de mesure formelle de la qualité du retrieval (métriques, évaluation) démontrée",
+        "Aucune expérience documentée de sécurisation d'agents, de prompt injection ou de guardrails",
+        "Pas d'expérience avec l'API OpenAI ni orchestration de prompts en contexte professionnel",
+        "Le CV est centré computer vision et le positionnement affiché ne reflète pas l'IA générative"
+      ],
+      "adequation_preferences": {
+        "lieu": "non précisé dans l'offre (préférence Paris / Île-de-France, compatibilité à vérifier)",
+        "contrat": "non précisé dans l'offre (CDI souhaité ; la mission pourrait être freelance)",
+        "teletravail": "non précisé (hybride souhaité)",
+        "salaire": "non précisé"
+      },
+      "a_reviser": [
+        "Architecture RAG de production : chunking, hybrid search, reranking, évaluation du retrieval (recall, MRR, faithfulness, Ragas)",
+        "LangChain : chaînes, retrievers, agents, LangGraph, intégration avec Qdrant",
+        "Qdrant : collections, filtres, indexation HNSW, comparaison avec pgvector et critères de choix",
+        "Prompt injection (directe et indirecte) et guardrails : validation des entrées/sorties, moindre privilège des outils, sandboxing",
+        "Comportements probabilistes des LLMs : hallucinations, sorties structurées, retries, fallback, temperature",
+        "Observabilité et gestion d'incidents en production (logs, tracing, évaluation continue)",
+        "MCP et agents multi-outils",
+        "Préparer des exemples de passage PoC vers production, en s'appuyant sur le projet Faktory et l'assistant emploi"
+      ],
+      "conseils_candidature": [
+        "Présenter l'assistant emploi (FastAPI, pgvector, Pydantic, Docker, Claude Agent SDK) et le projet RAG Ollama comme preuves concrètes, en étant honnête sur leur caractère personnel",
+        "Ajouter à ces projets LangChain, Qdrant, retrieval hybride, reranking et une évaluation chiffrée du retrieval avant l'entretien",
+        "Mettre en avant la culture de production issue de la computer vision (tests, performance, validation, fiabilité)",
+        "Préparer une réponse honnête sur la sécurité des agents et la prompt injection, idéalement avec une démonstration de guardrails sur un projet",
+        "Clarifier le type de contrat, le lieu et le télétravail, qui ne sont pas précisés",
+        "Candidature possible mais à faible probabilité ; ne pas surévaluer l'expérience IA générative"
+      ],
+      "recommandation": "postuler en adaptant"
+    },
+    "verdicts": {
+      "score": false,
+      "recommandation": true,
+      "bloquante": true
+    }
+  },
+  {
+    "offre": "offres8.txt",
+    "attendu": {
+      "offre": "offres8.txt",
+      "categorie": "bonne",
+      "sources": [
+        "assistant_emploi",
+        "rag_ollama"
+      ],
+      "bloquante": null,
+      "score_min": 70,
+      "score_max": 90,
+      "recommandations": [
+        "postuler"
+      ]
+    },
+    "analyse": {
+      "titre": "Ingénieur IA / GenAI – LLM, RAG & Agents IA",
+      "entreprise": "non précisé",
+      "lieu": "Île-de-France",
+      "contrat": "non précisé (mission longue durée, probablement freelance/ESN)",
+      "score": 66,
+      "resume": "Le profil couvre bien le socle Python, FastAPI, Docker, Git et pgvector/RAG grâce à des projets personnels récents, avec une solide expérience en ML appliqué. Il manque en revanche une expérience professionnelle en GenAI/agents en production, LangChain/LangGraph et CI/CD/LLMOps, et le type de contrat (mission) est à confirmer face à la recherche de CDI.",
+      "exigences_bloquantes": [
+        "Aucune exigence bloquante explicite (années d'expérience et diplôme non précisés)",
+        "Type de contrat non précisé : « mission longue durée » peut impliquer freelance/portage, à confirmer face à la préférence CDI"
+      ],
+      "points_forts": [
+        {
+          "point": "Python solide, usage professionnel depuis 2024 (applications temps réel, pipelines multithreadés, tests unitaires)",
+          "preuve": "cv"
+        },
+        {
+          "point": "Pipeline RAG complet réalisé en local : chunking, embeddings, recherche vectorielle, génération avec Ollama, compréhension du grounding",
+          "preuve": "rag_ollama"
+        },
+        {
+          "point": "Application LLM de bout en bout : API FastAPI (GET/POST/DELETE), Pydantic, PostgreSQL + pgvector, Docker Compose, RAG sur le parcours",
+          "preuve": "assistant_emploi"
+        },
+        {
+          "point": "Appel de LLM via Claude Agent SDK, sortie structurée validée par schéma JSON/Pydantic, réflexion sur l'arbitrage contexte complet vs RAG",
+          "preuve": "assistant_emploi"
+        },
+        {
+          "point": "Expérience ML/IA : entraînement de modèles, évaluation, inférence, intégration en application réelle, contraintes de performance et optimisation (recherche de séquence 30 s → 1 s)",
+          "preuve": "faktory"
+        },
+        {
+          "point": "Culture IA : PyTorch, TensorFlow, apprentissage par renforcement ; Git, Linux ; anglais courant",
+          "preuve": "cv"
+        },
+        {
+          "point": "Domaines visés (IA agentique, RAG, computer vision) alignés avec l'offre, disponibilité immédiate",
+          "preuve": "cv"
+        }
+      ],
+      "manques": [
+        "Aucune expérience professionnelle GenAI/LLM en production : RAG et LLM uniquement en projets personnels",
+        "Agents IA / workflows agentiques : seulement une base théorique évoquée (rag_ollama), pas de réalisation démontrée",
+        "LangChain / LangGraph : non mentionné",
+        "OpenAI / Azure OpenAI : non mentionné ; Anthropic via SDK et Ollama (open source) seulement en projet perso",
+        "CI/CD, monitoring, observabilité, sécurité : non démontrés (Docker Compose seulement)",
+        "MLOps/LLMOps et fine-tuning/PEFT/LoRA (appréciés) : non mentionnés",
+        "Évaluation systématique de la qualité des réponses LLM : non démontrée",
+        "Expérience professionnelle principalement en computer vision, avec un CV centré sur ce domaine et non sur la GenAI",
+        "Pas d'expérience en entreprise de mise en production de POC GenAI"
+      ],
+      "adequation_preferences": {
+        "lieu": "Conforme : Île-de-France, compatible avec Paris/IDF",
+        "contrat": "À clarifier : « mission longue durée » non précisée, CDI recherché",
+        "teletravail": "Conforme : hybride",
+        "salaire": "non précisé"
+      },
+      "a_reviser": [
+        "Architecture RAG avancée : stratégies de chunking, reranking, recherche hybride, évaluation (RAGAS, etc.)",
+        "LangChain et surtout LangGraph : agents, graphes d'état, outils, mémoire",
+        "Patterns agentiques : tool calling, planification, multi-agents, garde-fous",
+        "Évaluation de LLM : jeux de test, LLM-as-judge, métriques de fiabilité et d'hallucination",
+        "LLMOps : observabilité (Langfuse, LangSmith), monitoring, coûts, latence",
+        "CI/CD (GitHub Actions/GitLab CI) et déploiement de conteneurs",
+        "API OpenAI/Azure OpenAI, différences avec Anthropic",
+        "Bases vectorielles : pgvector vs autres (Qdrant, Chroma), indexation HNSW/IVF",
+        "Fine-tuning, LoRA/PEFT : principes",
+        "Sécurité LLM : prompt injection, fuite de données"
+      ],
+      "conseils_candidature": [
+        "Adapter le CV : mettre en avant le projet assistant-emploi (FastAPI, Pydantic, pgvector, Docker Compose, Claude Agent SDK) et le projet RAG Ollama dans une section « GenAI », avec lien GitHub",
+        "Reformuler le titre/résumé du CV pour viser aussi IA/GenAI, sans effacer l'atout ML/production issu de la computer vision",
+        "Si possible, ajouter rapidement un petit projet d'agent avec LangGraph (outils, état) et un pipeline d'évaluation + CI/CD pour combler les manques",
+        "Présenter honnêtement le RAG/LLM comme projets personnels, en insistant sur les choix techniques (contexte complet vs RAG, sortie structurée)",
+        "Valoriser l'expérience d'industrialisation (optimisation, tests, non-régression, intégration en app réelle)",
+        "Clarifier avec le recruteur le cadre contractuel (freelance/portage/CDI via ESN), le client final et le niveau d'expérience attendu"
+      ],
+      "recommandation": "postuler en adaptant"
+    },
+    "verdicts": {
+      "score": false,
+      "recommandation": false,
+      "bloquante": true
+    }
+  },
+  {
+    "offre": "offres9.txt",
+    "attendu": {
+      "offre": "offres9.txt",
+      "categorie": "bonne",
+      "sources": [
+        "altaroad",
+        "faktory",
+        "canne_blanche"
+      ],
+      "bloquante": null,
+      "score_min": 55,
+      "score_max": 80,
+      "recommandations": [
+        "postuler",
+        "postuler en adaptant"
+      ]
+    },
+    "analyse": {
+      "titre": "Computer Vision Engineer confirmé(e) (traitement documentaire, VLM)",
+      "entreprise": "STORM GROUP (pour un client partenaire)",
+      "lieu": "non précisé",
+      "contrat": "non précisé",
+      "score": 52,
+      "resume": "Le candidat a une vraie base en computer vision (OpenCV, YOLO, détection, segmentation, tracking), en Python et en tests, avec 1 à 2 ans d'expérience en freelance, ce qui correspond au niveau demandé. Il lui manque en revanche l'essentiel du cœur documentaire de l'offre (OCR/HTR, VLM/Hugging Face, fine-tuning) ainsi que la stack MLOps (Docker/Kubernetes, MLflow, S3, GPU), et le lieu et le type de contrat ne sont pas précisés.",
+      "exigences_bloquantes": [
+        "Solide expérience OCR / HTR exigée : absente du CV",
+        "Pratique des modèles multimodaux (VLM), de Hugging Face et du fine-tuning : non démontrée",
+        "Maîtrise de Docker, Kubernetes et de l'exploitation GPU : non mentionnée",
+        "MLflow et stockage objet S3 : non mentionnés",
+        "Maîtrise PyTorch annoncée « excellente » : PyTorch cité seulement dans la section IA/simulation (RL), pas en vision",
+        "Diplôme Bac+5 : satisfait (Master Sorbonne), à noter que la spécialisation vision/ML n'est pas explicite (Master Science de l'ingénieur)"
+      ],
+      "points_forts": [
+        {
+          "point": "Détection, segmentation et suivi avec YOLO/Roboflow, de l'entraînement à l'intégration dans un pipeline",
+          "preuve": "faktory"
+        },
+        {
+          "point": "OpenCV et Python en production, avec tests unitaires, validation et optimisation de performance (recherche vidéo de 30 s à 1 s)",
+          "preuve": "cv"
+        },
+        {
+          "point": "Détection, catégorisation et comptage de véhicules sur flux vidéo autoroutiers",
+          "preuve": "altaroad"
+        },
+        {
+          "point": "Expérience de 1 à 2 ans en vision par ordinateur, cohérente avec le niveau demandé",
+          "preuve": "cv"
+        },
+        {
+          "point": "Culture RAG/LLM (reranking, évaluation, hallucination) utile pour l'angle multimodal et les métriques d'évaluation",
+          "preuve": "rag_ollama"
+        },
+        {
+          "point": "Anglais courant, Git, Linux, Bac+5 et disponibilité immédiate",
+          "preuve": "cv"
+        }
+      ],
+      "manques": [
+        "OCR / HTR : aucune expérience citée",
+        "VLM, Hugging Face, prompting multimodal et fine-tuning de modèles open-weight",
+        "Docker, Kubernetes, déploiement sur GPU",
+        "MLflow, suivi d'expériences et versioning des poids",
+        "Stockage objet S3",
+        "Prétraitement documentaire (redressement, binarisation, recalage) : travail sur la vidéo plutôt que sur des documents",
+        "Métriques d'évaluation sur mesure et scores de confiance : peu documentés",
+        "PyTorch appliqué à la vision (le CV cite surtout YOLO/Roboflow) ; pandas non mentionné"
+      ],
+      "adequation_preferences": {
+        "lieu": "non précisé dans l'offre (le candidat cherche Paris / Île-de-France)",
+        "contrat": "non précisé (le candidat cherche un CDI) ; à vérifier, car une ESN peut proposer un CDI",
+        "teletravail": "2 à 3 jours par semaine, compatible avec la préférence hybride",
+        "salaire": "non précisé"
+      },
+      "a_reviser": [
+        "OCR/HTR : Tesseract, PaddleOCR, TrOCR, évaluation (CER/WER)",
+        "Prétraitement de documents avec OpenCV : deskew, binarisation adaptative, homographie, recalage",
+        "VLM open-weight (Qwen-VL, PaliGemma, etc.) avec Hugging Face, prompting multimodal, fine-tuning LoRA/PEFT",
+        "PyTorch : boucle d'entraînement, segmentation sémantique, détection",
+        "Docker, notions de Kubernetes, utilisation de GPU, S3",
+        "MLflow : tracking d'expériences et versioning de modèles",
+        "Métriques d'évaluation et scores de confiance (calibration)",
+        "Reproductibilité et traçabilité en environnement sécurisé"
+      ],
+      "conseils_candidature": [
+        "Mettre en avant YOLO/OpenCV en production et l'optimisation de performance, présentés comme des atouts transférables aux documents",
+        "Faire un petit projet personnel OCR/VLM sur documents avec Hugging Face, MLflow et Docker, et le publier sur le portfolio",
+        "Relier l'expérience RAG et l'évaluation (hallucination, fidélité) à la partie VLM et aux métriques sur mesure",
+        "Être transparent sur les écarts (OCR, K8s) tout en montrant une montée en compétence rapide",
+        "Demander lors du premier échange le lieu, le type de contrat et la fourchette salariale",
+        "Les domaines visés (IA agentique, RAG) sont peu présents ici ; c'est surtout un poste de vision documentaire"
+      ],
+      "recommandation": "postuler en adaptant"
+    },
+    "verdicts": {
+      "score": false,
+      "recommandation": true,
+      "bloquante": true
+    }
+  }
+]

@@ -1,11 +1,19 @@
 [
   {"offre": "offres1.txt", "categorie": "mauvaise", "sources": [], "bloquante": "Master 2 RH, alternance", "score_min": 0, "score_max": 15, "recommandations": ["passer"]},
+  
   {"offre": "offres2.txt", "categorie": "mauvaise", "sources": [], "bloquante": "5 ans de manager caisse", "score_min": 0, "score_max": 15, "recommandations": ["passer"]},
+  
   {"offre": "offres3.txt", "categorie": "piege", "sources": ["altaroad", "faktory", "canne_blanche"], "bloquante": "stage, Meylan, profil étudiant", "score_min": 30, "score_max": 50, "recommandations": ["passer"]},
+  
   {"offre": "offres4.txt", "categorie": "piege", "sources": ["assistant_emploi", "rag_ollama"], "bloquante": "5 ans d'expérience, freelance", "score_min": 35, "score_max": 55, "recommandations": ["passer"]},
-  {"offre": "offres5.txt", "categorie": "moyenne", "sources": ["assistant_emploi", "rag_ollama"], "bloquante": "6 mois sur SFEIR RAISE", "score_min": 50, "score_max": 70, "recommandations": ["passer", "postuler en adaptant"]},
+  
+  {"offre": "offres5.txt", "categorie": "moyenne", "sources": ["assistant_emploi", "rag_ollama"], "bloquante": "6 mois sur SFEIR RAISE", "score_min": 30, "score_max": 50, "recommandations": ["passer", "postuler en adaptant"]},
+
   {"offre": "offres6.txt", "categorie": "piege", "sources": ["assistant_emploi", "rag_ollama"], "bloquante": "8 ans d'expérience", "score_min": 25, "score_max": 45, "recommandations": ["passer"]},
-  {"offre": "offres7.txt", "categorie": "moyenne", "sources": ["assistant_emploi", "rag_ollama"], "bloquante": null, "score_min": 55, "score_max": 75, "recommandations": ["postuler en adaptant"]},
-  {"offre": "offres8.txt", "categorie": "bonne", "sources": ["assistant_emploi", "rag_ollama"], "bloquante": null, "score_min": 70, "score_max": 90, "recommandations": ["postuler"]},
+  
+  {"offre": "offres7.txt", "categorie": "moyenne", "sources": ["assistant_emploi", "rag_ollama"], "bloquante": null, "score_min": 35, "score_max": 55, "recommandations": ["postuler en adaptant"]},
+
+  {"offre": "offres8.txt", "categorie": "bonne", "sources": ["assistant_emploi", "rag_ollama"], "bloquante": null, "score_min": 55, "score_max": 75, "recommandations": ["postuler", "postuler en adaptant"]},
+  
   {"offre": "offres9.txt", "categorie": "bonne", "sources": ["altaroad", "faktory", "canne_blanche"], "bloquante": null, "score_min": 55, "score_max": 80, "recommandations": ["postuler", "postuler en adaptant"]}
 ]
