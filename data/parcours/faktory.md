@@ -1,4 +1,4 @@
-## The Faktory — Stage puis Freelance
+## The Faktory — Freelance
 
 **Développement logiciel, Computer Vision & IA**
 
