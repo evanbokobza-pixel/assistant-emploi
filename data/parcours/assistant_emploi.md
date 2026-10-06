@@ -40,7 +40,7 @@ Raisons : un LLM génère du texte et une consigne dans le prompt ne garantit pa
 
 Choix : les embeddings sont stockés dans PostgreSQL avec l'extension pgvector.
 
-Raisons : pgvector est gratuit, open source et tourne en local, donc mes données restent chez moi. Les offres et les vecteurs sont dans la même base que j'utilisais déjà : pas de deuxième service à installer ni à synchroniser. Mon volume (73 chunks) est très faible pour pgvector.
+Raisons : pgvector est gratuit, open source et tourne en local, donc mes données restent chez moi. Les offres et les vecteurs sont dans la même base que j'utilisais déjà : pas de deuxième service à installer ni à synchroniser. Mon volume (moins de 100 chunks) est très faible pour pgvector.
 
 Quand je changerais : si le volume devenait énorme (des millions de vecteurs) ou si je ne voulais plus administrer la base moi-même.
 
