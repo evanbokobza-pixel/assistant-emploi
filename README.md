@@ -51,6 +51,17 @@ FastAPI : /offres (GET, POST, DELETE) · /agent (POST)
 - **Anti-doublons** : une empreinte md5 du texte, unique en base. L'API vérifie avant d'appeler Claude et renvoie une 409 : une offre déjà connue répond en environ 40 ms au lieu de 28 s.
 - **Erreurs** : 404 si une offre n'existe pas, 409 si elle existe déjà, 502 si Claude échoue, sans faire planter l'API ni l'interface.
 
+
+## Serveur MCP
+
+Les 4 outils de l'agent sont aussi exposés par un serveur MCP autonome (`mcp_server.py`), utilisable par n'importe quel client MCP. La logique des outils est écrite une seule fois dans `outils.py`, puis emballée par l'agent et par le serveur.
+
+```bash
+claude mcp add --scope user emploi -- /chemin/vers/.venv/bin/python /chemin/vers/mcp_server.py
+claude mcp list   # emploi : ✔ Connected
+```
+
+
 ## Choix techniques
 
 - **pgvector plutôt qu'une base vectorielle dédiée** : une seule base pour les données et les vecteurs, gratuite et locale.
