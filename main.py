@@ -57,13 +57,26 @@ def lire_offre(id_offre: int):
 
 @app.post("/offres", status_code=201)
 async def ajouter_offre(offre: NouvelleOffre):
+    texte = offre.texte.strip()
+
+    # Avant d'appeler Claude, on vérifie si cette offre existe déjà
+    with get_connection() as conn:
+        existante = conn.execute(
+            "SELECT id FROM offres WHERE empreinte = md5(%s)", (texte,)
+        ).fetchone()
+    if existante:
+        raise HTTPException(
+            status_code=409,
+            detail={"message": "Cette offre a déjà été analysée.", "id": existante[0]},
+        )
+
     try:
-        resultat = await analyser(offre.texte)
+        resultat = await analyser(texte)
     except Exception as e:
         raise HTTPException(status_code=502, detail=f"Échec de l'analyse : {e}")
-    id_offre = enregistrer(offre.texte, resultat)
+    id_offre = enregistrer(texte, resultat)
     return {"id": id_offre, "analyse": resultat}
-
+    
 
 @app.delete("/offres/{id_offre}", status_code=204)
 def supprimer_offre(id_offre: int):

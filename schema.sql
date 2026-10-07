@@ -40,3 +40,7 @@ CREATE TABLE IF NOT EXISTS chunks (
     contenu TEXT NOT NULL,         -- le texte du morceau
     embedding vector(768) NOT NULL -- son vecteur, 768 nombres
 );
+
+
+ALTER TABLE offres ADD COLUMN empreinte TEXT GENERATED ALWAYS AS (md5(texte_complet)) STORED;
+ALTER TABLE offres ADD CONSTRAINT offres_empreinte_unique UNIQUE (empreinte);

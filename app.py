@@ -47,8 +47,13 @@ with onglet_analyse:
         with st.spinner("Analyse en cours, une vingtaine de secondes..."):
             reponse = requests.post(f"{API}/offres", json={"texte": texte}, timeout=180)
         if reponse.status_code == 201:
-            # On garde l'analyse en mémoire pour qu'elle survive aux relances du script
             st.session_state["derniere_analyse"] = reponse.json()["analyse"]
+        elif reponse.status_code == 409:
+            # Offre déjà connue : on affiche l'analyse existante, sans rappeler Claude
+            id_existante = reponse.json()["detail"]["id"]
+            st.info("Cette offre a déjà été analysée : voici l'analyse enregistrée.")
+            detail = requests.get(f"{API}/offres/{id_existante}", timeout=10).json()
+            st.session_state["derniere_analyse"] = detail["analyse"]
         else:
             st.error(f"Erreur {reponse.status_code} : {reponse.text}")
 
