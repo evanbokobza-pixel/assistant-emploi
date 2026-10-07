@@ -1,14 +1,16 @@
 import asyncio
-from pathlib import Path
 from claude_agent_sdk import (
     tool, create_sdk_mcp_server, query, ClaudeAgentOptions,
     AssistantMessage, UserMessage, ResultMessage, TextBlock, ToolUseBlock, ToolResultBlock,
 )
-from db import get_connection
-from recherche import rechercher
+import outils
 
 
-# Outil 1 : les offres enregistrées (SQL). Claude choisit les paramètres, NOTRE code écrit le SQL.
+def texte(s):
+    """Emballe un texte dans le format attendu par le SDK."""
+    return {"content": [{"type": "text", "text": s}]}
+
+
 @tool(
     "chercher_offres",
     "Liste les offres d'emploi enregistrées, triées par score décroissant.",
@@ -22,19 +24,9 @@ from recherche import rechercher
     },
 )
 async def chercher_offres(args):
-    score_min = args.get("score_min", 0)
-    limite = min(args.get("limite", 5), 20)  # garde-fou : jamais plus de 20
-    with get_connection() as conn:
-        lignes = conn.execute(
-            "SELECT id, titre, entreprise, score FROM offres "
-            "WHERE score >= %s ORDER BY score DESC LIMIT %s",
-            (score_min, limite),
-        ).fetchall()
-    texte = "\n".join(f"#{i} {t} ({e}) : score {s}" for i, t, e, s in lignes) or "Aucune offre."
-    return {"content": [{"type": "text", "text": texte}]}
+    return texte(outils.chercher_offres(args.get("score_min", 0), args.get("limite", 5)))
 
 
-# Outil 2 : le parcours du candidat (RAG). Recherche par le sens dans les chunks.
 @tool(
     "rechercher_parcours",
     "Recherche dans le parcours du candidat (CV, expériences, projets) les passages "
@@ -48,16 +40,9 @@ async def chercher_offres(args):
     },
 )
 async def rechercher_parcours(args):
-    resultats = rechercher(args["question"], k=5)
-    passages = []
-    for r in resultats:
-        source = r["source"] if isinstance(r, dict) else r[0]
-        contenu = r["contenu"] if isinstance(r, dict) else r[1]
-        passages.append(f"[{source}]\n{contenu}")
-    return {"content": [{"type": "text", "text": "\n\n".join(passages) or "Aucun passage."}]}
+    return texte(outils.rechercher_parcours(args["question"]))
 
 
-# Outil 3 : le détail d'une offre précise (SQL, par son id).
 @tool(
     "lire_offre",
     "Renvoie le détail d'une offre enregistrée à partir de son id (#numéro donné par "
@@ -72,33 +57,7 @@ async def rechercher_parcours(args):
     },
 )
 async def lire_offre(args):
-    with get_connection() as conn:
-        ligne = conn.execute(
-            "SELECT titre, entreprise, lieu, contrat, score, analyse_ia, texte_complet "
-            "FROM offres WHERE id = %s",
-            (args["id"],),
-        ).fetchone()
-    if ligne is None:
-        return {"content": [{"type": "text", "text": f"Aucune offre avec l'id {args['id']}."}]}
-
-    titre, entreprise, lieu, contrat, score, analyse, texte = ligne
-    analyse = analyse or {}
-    points_forts = [p.get("point", "") for p in analyse.get("points_forts", [])]
-    detail = (
-        f"#{args['id']} {titre} ({entreprise}), score {score}\n"
-        f"Lieu : {lieu} | Contrat : {contrat}\n"
-        f"Résumé : {analyse.get('resume', 'non précisé')}\n"
-        f"Exigences bloquantes : {analyse.get('exigences_bloquantes', [])}\n"
-        f"Points forts : {points_forts}\n"
-        f"Manques : {analyse.get('manques', [])}\n"
-        f"Recommandation : {analyse.get('recommandation', 'non précisé')}\n\n"
-        f"Début du texte de l'offre :\n{(texte or '')[:1500]}"  # garde-fou : texte tronqué
-    )
-    return {"content": [{"type": "text", "text": detail}]}
-
-
-# Outil 4 : le CV complet. Il est court : pas besoin de RAG, on le donne en entier.
-CV = Path(__file__).parent / "data" / "parcours" / "cv.md"
+    return texte(outils.lire_offre(args["id"]))
 
 
 @tool(
@@ -109,8 +68,7 @@ CV = Path(__file__).parent / "data" / "parcours" / "cv.md"
     {"type": "object", "properties": {}, "required": []},
 )
 async def lire_cv(args):
-    texte = CV.read_text(encoding="utf-8") if CV.exists() else "CV introuvable."
-    return {"content": [{"type": "text", "text": texte}]}
+    return texte(outils.lire_cv())
 
 
 serveur = create_sdk_mcp_server(
@@ -159,7 +117,6 @@ async def demander(question):
                     textes.append(bloc.text)
         elif isinstance(message, ResultMessage):
             reponse_finale = getattr(message, "result", None)
-    # Pas de return dans la boucle (souviens-toi de l'erreur aclose) : on répond après
     return {"reponse": reponse_finale or (textes[-1] if textes else ""), "etapes": etapes}
 
 
@@ -176,12 +133,9 @@ async def main(question):
         elif isinstance(message, UserMessage) and isinstance(message.content, list):
             for bloc in message.content:
                 if isinstance(bloc, ToolResultBlock):
-                    texte = str(bloc.content)
-                    # On coupe l'affichage des longs résultats pour garder la sortie lisible
-                    print(f"📦 Résultat de l'outil :\n{texte[:400]}{' [...]' if len(texte) > 400 else ''}\n")
+                    t = str(bloc.content)
+                    print(f"📦 Résultat de l'outil :\n{t[:400]}{' [...]' if len(t) > 400 else ''}\n")
 
 
-# Ce bloc ne s'exécute QUE si on lance « python agent.py ».
-# Quand main.py fait « from agent import demander », il est ignoré.
 if __name__ == "__main__":
     asyncio.run(main("Qu'est-ce que j'ai fait chez Altaroad ?"))
