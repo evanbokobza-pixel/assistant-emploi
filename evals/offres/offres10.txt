@@ -1,0 +1,53 @@
+Description de l'offre
+Description:
+Ingénieur(e) Vision par Ordinateur / IA Détection de Noyade (H/F) - BOULOGNE-BILLANCOURT (92)
+
+Poséidon, une structure du groupe Maytronics comptant 20 collaborateurs, est spécialisée depuis 30 ans dans les solutions d’intelligence artificielle pour la prévention des noyades en piscines publiques. Poséidon déploie ses solutions dans une quinzaine de pays (Europe, Etats-Unis, Asie, Australie).
+
+Donnez un sens à votre travail et contribuez, vous aussi, à sauver des vies en occupant un rôle clé dans le développement de nos systèmes !
+
+Description du poste et des missions
+
+Dans le cadre du développement de notre technologie de détection de noyade par vision par ordinateur, vous rejoignez notre équipe R&D pour concevoir, développer, tester et fiabiliser des algorithmes d’intelligence artificielle destinés à détecter en temps réel les signes de détresse et de noyade dans les piscines publiques.
+
+Nos solutions constituent une aide à la surveillance des bassins et doivent répondre à des exigences élevées de robustesse, de précision et de fiabilité opérationnelle.
+
+Vos principales missions seront les suivantes :
+
+Concevoir et implémenter des modèles de vision par ordinateur dédiés à la détection de signes avant-coureurs de détresse et de noyade sur images et flux vidéo.
+Développer des solutions d’IA temps réel robustes, adaptées à des environnements multi-caméras et à des contraintes fortes de latence.
+Optimiser les performances des algorithmes : précision, rappel, taux de faux positifs, taux de faux négatifs, stabilité et temps d’inférence.
+Structurer et maintenir les pipelines de traitement de données : prétraitement, annotation, entraînement, évaluation, inférence et suivi des performances.
+Collaborer étroitement avec les équipes opérations afin d’assurer le déploiement fiable des solutions développées.
+Contribuer à la veille technologique et à l’innovation dans le domaine de la vision par ordinateur appliquée à la sécurité aquatique.
+
+
+Pourquoi nous rejoindre ?
+
+Participer à un projet à fort impact sociétal, avec une mission concrète : contribuer à sauver des vies
+Rejoindre une équipe passionnée, experte et multidisciplinaire
+Evoluer dans un environnement porté par plus de 30 ans d’expertise dans la détection de noyade
+
+
+Découvrez Poséidon à travers ce reportage diffusé au JT de TF1
+
+
+Requirements:
+Profil recherché
+
+Formation Bac+5 minimum en informatique, intelligence artificielle, vision par ordinateur, traitement du signal ou domaine connexe, obtenue en école d’ingénieurs, Master ou Doctorat
+3 ans minimum d’expérience en développement de solutions IA, dont une expérience significative en vision par ordinateur appliquée à des données image ou vidéo.
+Une expérience dans les domaines de la vidéosurveillance, de la sécurité, de la santé, du sport ou des comportements humains serait particulièrement appréciée.
+
+
+Vous êtes reconnu(e) pour votre rigueur, votre sens du détail et votre capacité à vérifier et sécuriser vos développements avant leur mise à disposition. Vous savez travailler de manière structurée, documenter vos choix techniques et communiquer clairement sur les résultats, limites et risques identifiés.
+
+Vous appréciez le travail collectif et êtes à l’aise dans un environnement mêlant recherche appliquée, développement logiciel et enjeux opérationnels. Une sensibilité forte à l’impact sociétal de notre solution est attendue.
+
+Compétences techniques requises :
+
+Solide expérience en Deep Learning appliqué à l’image/vidéo (CNN, Transformers spatio-temporels, 3D ConvNets, VLM…).
+Maîtrise des outils typiques de vision par ordinateur IA : Python, OpenCV.
+Maîtrise d’un ou plusieurs frameworks IA : PyTorch, TensorFlow, ONNX.
+Expérience en traitement de flux vidéo temps réel.
+

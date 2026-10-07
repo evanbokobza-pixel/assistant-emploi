@@ -15,5 +15,7 @@
 
   {"offre": "offres8.txt", "categorie": "bonne", "sources": ["assistant_emploi", "rag_ollama"], "bloquante": null, "score_min": 55, "score_max": 75, "recommandations": ["postuler", "postuler en adaptant"]},
   
-  {"offre": "offres9.txt", "categorie": "bonne", "sources": ["altaroad", "faktory", "canne_blanche"], "bloquante": null, "score_min": 55, "score_max": 80, "recommandations": ["postuler", "postuler en adaptant"]}
+  {"offre": "offres9.txt", "categorie": "bonne", "sources": ["altaroad", "faktory", "canne_blanche"], "bloquante": null, "score_min": 55, "score_max": 80, "recommandations": ["postuler", "postuler en adaptant"]},
+
+  {"offre": "offres10.txt", "categorie": "limite", "sources": ["faktory", "altaroad"], "bloquante": null, "score_min": 55, "score_max": 75, "recommandations": ["postuler", "postuler en adaptant"]}
 ]
