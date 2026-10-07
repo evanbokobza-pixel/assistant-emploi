@@ -1,7 +1,7 @@
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 import outils
 
-mcp = FastMCP("emploi")
+mcp = MCPServer("emploi")
 
 # Avec FastMCP, la description de l'outil, c'est sa docstring : c'est elle que le client lit
 
@@ -35,6 +35,5 @@ def lire_cv() -> str:
     le statut ou la chronologie du parcours."""
     return outils.lire_cv()
 
-
 if __name__ == "__main__":
-    mcp.run()  # communique par l'entrée et la sortie standard (stdio)
+    mcp.run(transport="stdio")  # communique par l'entrée et la sortie standard
