@@ -2,7 +2,7 @@ import asyncio
 from pathlib import Path
 from claude_agent_sdk import (
     tool, create_sdk_mcp_server, query, ClaudeAgentOptions,
-    AssistantMessage, UserMessage, TextBlock, ToolUseBlock, ToolResultBlock,
+    AssistantMessage, UserMessage, ResultMessage, TextBlock, ToolUseBlock, ToolResultBlock,
 )
 from db import get_connection
 from recherche import rechercher
@@ -141,7 +141,30 @@ options = ClaudeAgentOptions(
 )
 
 
+async def demander(question):
+    """Pose une question à l'agent et renvoie sa réponse finale et les outils qu'il a utilisés.
+    C'est cette fonction que l'API appelle."""
+    etapes = []
+    textes = []
+    reponse_finale = None
+    async for message in query(prompt=question, options=options):
+        if isinstance(message, AssistantMessage):
+            for bloc in message.content:
+                if isinstance(bloc, ToolUseBlock):
+                    etapes.append({
+                        "outil": bloc.name.replace("mcp__emploi__", ""),
+                        "parametres": bloc.input,
+                    })
+                elif isinstance(bloc, TextBlock):
+                    textes.append(bloc.text)
+        elif isinstance(message, ResultMessage):
+            reponse_finale = getattr(message, "result", None)
+    # Pas de return dans la boucle (souviens-toi de l'erreur aclose) : on répond après
+    return {"reponse": reponse_finale or (textes[-1] if textes else ""), "etapes": etapes}
+
+
 async def main(question):
+    """Version terminal : affiche chaque étape au fur et à mesure (pour déboguer)."""
     print(f"QUESTION : {question}\n")
     async for message in query(prompt=question, options=options):
         if isinstance(message, AssistantMessage):
@@ -158,16 +181,7 @@ async def main(question):
                     print(f"📦 Résultat de l'outil :\n{texte[:400]}{' [...]' if len(texte) > 400 else ''}\n")
 
 
-QUESTIONS = [
-    # Une seule question pour économiser ta limite d'utilisation
-    "Qu'est-ce que j'ai fait chez Altaroad ?",
-]
-
-
-async def tout():
-    for q in QUESTIONS:
-        await main(q)
-        print("=" * 60)
-
-
-asyncio.run(tout())
+# Ce bloc ne s'exécute QUE si on lance « python agent.py ».
+# Quand main.py fait « from agent import demander », il est ignoré.
+if __name__ == "__main__":
+    asyncio.run(main("Qu'est-ce que j'ai fait chez Altaroad ?"))

@@ -2,12 +2,29 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from db import get_connection
 from analyse import analyser, enregistrer
+from agent import demander
+from fastapi.responses import RedirectResponse
+
+
+
 
 app = FastAPI(title="Assistant emploi")
 
 
 class NouvelleOffre(BaseModel):
     texte: str
+
+
+
+class Question(BaseModel):
+    question: str
+
+
+
+@app.get("/", include_in_schema=False)
+def accueil():
+    # L'adresse seule redirige vers la documentation
+    return RedirectResponse("/docs")
 
 
 @app.get("/offres")
@@ -56,3 +73,14 @@ def supprimer_offre(id_offre: int):
         ).rowcount
     if supprimees == 0:
         raise HTTPException(status_code=404, detail="Offre introuvable")
+    
+
+
+
+@app.post("/agent")
+async def interroger_agent(q: Question):
+    try:
+        return await demander(q.question)
+    except Exception as e:
+        # Comme pour l'analyse : si Claude échoue, c'est une 502, pas un plantage
+        raise HTTPException(status_code=502, detail=f"L'agent a échoué : {e}")
