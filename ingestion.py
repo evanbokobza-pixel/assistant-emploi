@@ -71,4 +71,5 @@ def main():
             print(f"{fichier.name} : {len(morceaux)} chunks")
 
 
-main()
+if __name__ == "__main__":
+    main()
