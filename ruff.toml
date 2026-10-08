@@ -1,0 +1,8 @@
+line-length = 120
+
+[lint]
+# E et F : vraies erreurs (nom indéfini, import inutile...). I : ordre des imports.
+select = ["E4", "E7", "E9", "F", "I"]
+[lint.per-file-ignores]
+# Les evals modifient sys.path avant d'importer le projet : c'est voulu
+"evals/*" = ["E402"]

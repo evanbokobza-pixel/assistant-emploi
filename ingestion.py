@@ -1,5 +1,7 @@
 from pathlib import Path
+
 from sentence_transformers import SentenceTransformer
+
 from db import get_connection
 
 MODELE = "intfloat/multilingual-e5-base"

@@ -1,11 +1,18 @@
+from functools import lru_cache
+
 from sentence_transformers import SentenceTransformer
+
 from db import get_connection
 
-model = SentenceTransformer("intfloat/multilingual-e5-base")
+
+@lru_cache(maxsize=1)
+def modele():
+    """Charge le modèle au premier appel seulement, puis le garde en mémoire."""
+    return SentenceTransformer("intfloat/multilingual-e5-base")
 
 
 def rechercher(texte_offre, k=5, max_par_source=2, candidats=20, exclure=()):
-    vecteur = model.encode(f"query: {texte_offre}", normalize_embeddings=True)
+    vecteur = modele().encode(f"query: {texte_offre}", normalize_embeddings=True)
 
     with get_connection() as conn:
         lignes = conn.execute(

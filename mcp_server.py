@@ -1,4 +1,5 @@
 from mcp.server.mcpserver import MCPServer
+
 import outils
 
 mcp = MCPServer("emploi")

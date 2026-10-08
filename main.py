@@ -1,14 +1,13 @@
+from pathlib import Path
+
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-from db import get_connection
-from analyse import analyser, enregistrer
-from agent import demander
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
-from pathlib import Path
 from pydantic import BaseModel, Field
 
-
+from agent import demander
+from analyse import analyser, enregistrer
+from db import get_connection
 
 app = FastAPI(title="Assistant emploi")
 
@@ -39,9 +38,9 @@ def lister_offres():
                ORDER BY score DESC NULLS LAST"""
         ).fetchall()
     return [
-        {"id": l[0], "titre": l[1], "entreprise": l[2], "score": l[3],
-         "recommandation": l[4], "date_ajout": l[5]}
-        for l in lignes
+        {"id": ligne[0], "titre": ligne[1], "entreprise": ligne[2], "score": ligne[3],
+         "recommandation": ligne[4], "date_ajout": ligne[5]}
+        for ligne in lignes
     ]
 
 
