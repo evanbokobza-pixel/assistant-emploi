@@ -1,117 +1,124 @@
-# Assistant emploi — analyse d'offres et agent IA (RAG + LLM)
+# Assistant emploi — RAG, agent et serveur MCP
 
-Un assistant qui m'aide à cibler ma recherche d'emploi :
-- **Analyser une offre** : score d'adéquation, points forts prouvés par mon parcours, manques, exigences bloquantes et recommandation (postuler, postuler en adaptant ou passer).
-- **Suivre mes offres** : toutes les analyses enregistrées, triées par score.
-- **Poser une question à un agent** : il choisit lui-même ses outils (SQL sur mes offres, RAG sur mon parcours, lecture du CV) pour répondre, par exemple, à « laquelle de mes offres correspond le mieux à mon travail chez Faktory ? ».
+![CI](https://github.com/evanbokobza-pixel/assistant-emploi/actions/workflows/ci.yml/badge.svg)
 
-![Onglet agent](docs/agent.png)
+Un assistant qui analyse une offre d'emploi par rapport à mon parcours : score d'adéquation, points forts avec leur preuve, manques, exigences bloquantes et recommandation (postuler, postuler en adaptant ou passer). Un agent répond aux questions sur mes offres et mon parcours en choisissant lui-même ses outils.
+
+![Interface](docs/site.png)
+
+## Fonctionnalités
+
+- **Analyser une offre** : recherche vectorielle (RAG) dans mon parcours, puis analyse par Claude avec une sortie validée par un schéma Pydantic.
+- **Mes offres** : offres classées par score, avec la répartition des recommandations.
+- **Poser une question** : un agent Claude choisit entre 4 outils (offres en SQL, parcours en RAG, détail d'une offre, CV complet) et affiche les outils qu'il a utilisés.
+- **Mon CV** : le CV se modifie depuis le site et sert dès l'analyse suivante.
+- **Serveur MCP** : les mêmes outils sont utilisables depuis Claude Code.
 
 ## Résultats de l'évaluation
 
-Jeu de test de 10 offres réelles (2 hors sujet, 4 pièges avec une exigence éliminatoire, 2 moyennes ou limites, 2 bonnes), avec les attentes écrites **avant** de lancer l'outil.
+Jeu de test de 10 offres réelles (hors sujet, pièges avec une exigence éliminatoire, moyennes, bonnes), avec les attentes écrites avant de lancer l'outil.
 
 | Mesure | Résultat |
 |---|---|
-| Rappel de la recherche (sources attendues retrouvées dans le top 5) | 95 % (sur 7 offres) |
-| Exigences bloquantes, itération 1 : définition précise + règle « bloquante, donc passer » | 6/9 → **9/9** |
-| Exigences bloquantes, itération 2 : tolérance d'un an sur l'expérience + cas limite dédié | 9/10 → **10/10**, sans régression |
-| Recommandation et score dans les valeurs attendues | **10/10** |
+| Rappel de la recherche (sources attendues dans le top 5) | 95 % |
+| Exigences bloquantes correctement détectées | 6/9 → 9/9 → **10/10** |
+| Recommandation dans les valeurs acceptées | **10/10** |
+| Score dans la fourchette attendue | **9/10** (dernier lancement) |
 
-Méthode : chaque version est comparée à une référence mesurée **avec la même règle** (un script recorrige les anciennes réponses enregistrées, sans rappeler le LLM). Une seule chose change à la fois, et les cas qui marchaient doivent continuer à marcher (non-régression).
+Ce qui a fait progresser l'outil :
+- **6/9 → 9/9** : une définition précise de l'« exigence bloquante » dans le prompt. La référence a été mesurée avec le même critère strict ; seul le prompt a changé.
+- **9/10 → 10/10** sur une 10ᵉ offre : une tolérance d'un an sur l'expérience demandée (un écart d'un an est un manque, pas un motif d'élimination).
 
-Observations :
-- La variabilité dépend de l'ambiguïté : une offre hors sujet varie de 3 à 8 points sur 7 analyses, une offre limite jusqu'à 14 points. D'où des fourchettes de score plutôt que des valeurs exactes.
-- Une offre au texte tronqué obtenait 62 au lieu de 42 : les exigences, en fin d'offre, manquaient. L'outil n'est pas plus juste que ce qu'on lui donne à lire.
-
-Limites : un seul lancement par version, et un prompt réglé sur ces offres. Un second jeu d'offres jamais vu reste à construire.
+Limites : les scores varient de quelques points d'un lancement à l'autre (jusqu'à environ 10 points sur une offre ambiguë), et le prompt a été réglé sur ces offres ; un jeu de test séparé reste à construire.
 
 ## Architecture
 
 ```
-Streamlit (3 onglets)
+Navigateur (HTML / CSS / JavaScript)
       │  HTTP
       ▼
-FastAPI : /offres (GET, POST, DELETE) · /agent (POST)
+FastAPI : site statique + API REST (/offres, /agent, /cv)
       │
-      ├── Analyse (workflow) ──► Claude, sortie validée par un schéma Pydantic
-      │        └── Recherche RAG ──► PostgreSQL + pgvector
+      ├──► Analyse ──► Recherche RAG ──► PostgreSQL + pgvector
+      │       │                          (offres, analyses, chunks + embeddings)
+      │       ▼
+      │    Claude (sortie validée par Pydantic)
       │
-      └── Agent ──► Claude + 4 outils
-               ├── chercher_offres    (SQL, paramètres fixes)
-               ├── lire_offre         (SQL, par id)
-               ├── rechercher_parcours (RAG)
-               └── lire_cv            (CV complet)
+      └──► Agent Claude ──► 4 outils (SQL, RAG, détail d'offre, CV)
+                                 ▲
+                   Serveur MCP ──┘ (mêmes outils, pour Claude Code)
 ```
 
-- **Ingestion** : les fichiers de parcours sont découpés en chunks (paragraphes, puis lignes, puis phrases, avec chevauchement) et vectorisés avec `multilingual-e5-base` (768 dimensions).
-- **Recherche** : similarité cosinus dans pgvector, 5 passages, au plus 2 par source pour garder de la diversité.
-- **Analyse** : un workflow (un seul appel, chemin fixé par le code), avec règles d'honnêteté (« non précisé » plutôt qu'inventer) et de protection contre l'injection de prompt.
-- **Agent** : Claude choisit ses outils, lit les résultats et décide de la suite. Il n'a aucun outil intégré (pas de terminal, pas de fichiers) : seulement 4 outils à paramètres fixes, c'est le code qui écrit les requêtes SQL. Il relance au plus deux recherches si une information manque.
-- **Anti-doublons** : une empreinte md5 du texte, unique en base. L'API vérifie avant d'appeler Claude et renvoie une 409 : une offre déjà connue répond en environ 40 ms au lieu de 28 s.
-- **Erreurs** : 404 si une offre n'existe pas, 409 si elle existe déjà, 502 si Claude échoue, sans faire planter l'API ni l'interface.
-
-
-## Serveur MCP
-
-Les 4 outils de l'agent sont aussi exposés par un serveur MCP autonome (`mcp_server.py`), utilisable par n'importe quel client MCP. La logique des outils est écrite une seule fois dans `outils.py`, puis emballée par l'agent et par le serveur.
-
-```bash
-claude mcp add --scope user emploi -- /chemin/vers/.venv/bin/python /chemin/vers/mcp_server.py
-claude mcp list   # emploi : ✔ Connected
-```
-
+- **Ingestion** : les fichiers du parcours sont découpés en chunks (paragraphes, puis lignes, puis phrases, avec chevauchement) et transformés en vecteurs de 768 dimensions avec `multilingual-e5-base`.
+- **Recherche** : similarité cosinus dans pgvector, 5 passages retenus avec au plus 2 par source pour garder de la diversité. Le CV, court, est envoyé en entier.
+- **Analyse** : prompt structuré en balises XML, règle « non précisé plutôt qu'inventer », protection contre l'injection de prompt. Le SDK relance Claude si la réponse ne respecte pas le schéma.
+- **API** : 409 si l'offre a déjà été analysée (empreinte md5 unique en base, détectée avant tout appel à Claude), 502 si Claude échoue, 422 si la requête est invalide.
 
 ## Choix techniques
 
 - **pgvector plutôt qu'une base vectorielle dédiée** : une seule base pour les données et les vecteurs, gratuite et locale.
-- **CV entier, projets en RAG** : on ne met en RAG que ce qui ne tient pas dans le prompt. Découpé, le CV n'était vu qu'en partie.
-- **Sortie structurée validée** : une consigne dans le prompt ne garantit pas le format ; un schéma, si.
-- **L'interface passe toujours par l'API** : Streamlit ne fait qu'afficher, toute la logique est derrière l'API.
+- **CV entier dans le prompt, projets en RAG** : on ne met en RAG que ce qui ne tient pas dans le prompt. Avec le CV découpé, Claude n'en voyait qu'une partie et se trompait sur le type de contrat.
+- **Sortie structurée validée** : une consigne dans le prompt ne garantit pas le format ; la validation par schéma, si.
+- **Agent au pouvoir minimal** : aucun outil intégré (ni shell ni fichiers), des paramètres fixés à l'avance plutôt que du SQL libre, une limite de 20 résultats et de 12 tours.
+- **Site en HTML/CSS/JavaScript servi par FastAPI** : une seule adresse et un seul processus, sans framework ni étape de compilation. Tout texte venant de l'extérieur est échappé avant affichage (protection XSS).
+- **Modèle d'embeddings chargé au premier usage** : les tests et l'API démarrent sans le charger.
 
 ## Lancer le projet
 
-Prérequis : Python 3.12, Docker, et Claude Code installé et connecté (utilisé par le Claude Agent SDK).
+Prérequis : Docker, et un accès à Claude (jeton d'abonnement ou clé API).
 
 ```bash
 git clone https://github.com/evanbokobza-pixel/assistant-emploi.git
 cd assistant-emploi
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-
-cp .env.example .env               # puis remplir les valeurs
-docker compose up -d               # PostgreSQL + pgvector
-docker compose exec -T db sh -c 'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB"' < schema.sql
-
-python ajouter_preferences.py      # préférences de recherche
-python ingestion.py                # découpage + embeddings du parcours
+cp .env.example .env      # puis remplir le mot de passe et UNE authentification Claude
+docker compose up --build
 ```
 
-Puis, dans deux terminaux :
+Le site est sur http://localhost:8000 et la documentation de l'API sur http://localhost:8000/docs.
+
+Au premier lancement seulement, dans un second terminal :
 
 ```bash
-uvicorn main:app --reload --reload-exclude app.py   # API : http://localhost:8000/docs
-streamlit run app.py                                 # interface : http://localhost:8501
+docker compose exec app python ajouter_preferences.py   # préférences de recherche
+docker compose exec app python ingestion.py             # découpage + embeddings du parcours
 ```
+
+Pour l'authentification Claude, `.env` contient soit `CLAUDE_CODE_OAUTH_TOKEN` (jeton d'un abonnement personnel, généré par `claude setup-token`), soit `ANTHROPIC_API_KEY` (clé de la Claude Console).
+
+## Tests et CI
+
+```bash
+pytest -v        # 19 tests, sans appel à Claude ni base de données
+ruff check .
+```
+
+Les tests couvrent le découpage en chunks (taille, chevauchement, aucune perte), le schéma de validation (score hors bornes, recommandation inconnue, champ manquant) et les routes du CV (sauvegarde, refus d'un CV trop court).
+
+À chaque push, GitHub Actions lance ruff, les tests et la construction de l'image Docker.
 
 ## Évaluations
 
 ```bash
-python evals/eval_recherche.py                        # rappel de la recherche (sans appel au LLM)
-python evals/eval_analyse.py                          # score, recommandation, exigences bloquantes
-python evals/recorriger.py evals/resultats/<fichier>  # recorrige d'anciennes réponses avec la règle actuelle
+python evals/eval_recherche.py     # rappel de la recherche (sans appel à Claude)
+python evals/eval_analyse.py       # score, recommandation, exigences bloquantes
 ```
 
-Les attentes sont dans `evals/attentes.json`. Chaque lancement de l'eval d'analyse enregistre toutes les réponses dans `evals/resultats/`.
+Les attentes sont dans `evals/attentes.json`. Chaque lancement enregistre toutes les réponses dans `evals/resultats/`, pour comparer deux versions du prompt sans relancer Claude.
+
+## Serveur MCP
+
+`mcp_server.py` expose les 4 outils de l'agent selon le protocole MCP (transport stdio). Pour l'utiliser depuis Claude Code :
+
+```bash
+claude mcp add --scope user emploi -- /chemin/vers/.venv/bin/python /chemin/vers/mcp_server.py
+```
 
 ## Pistes
 
-- Mesurer la stabilité (plusieurs lancements) et tester sur un second jeu d'offres jamais vu.
-- Mesurer la précision de la recherche et ajouter un seuil de pertinence.
-- Avertir quand le texte d'une offre semble tronqué.
-- Suivi des candidatures (la table existe, l'interface reste à faire).
-- Serveur MCP autonome, puis déploiement cloud.
+- Mesurer la stabilité sur plusieurs lancements et tester sur un second jeu d'offres jamais vu.
+- Mettre à jour la recherche RAG automatiquement quand le CV est modifié depuis le site.
+- Déploiement en ligne, avec une clé API plafonnée.
 
 ## Stack
 
-Python · Claude (Claude Agent SDK) · PostgreSQL · pgvector · sentence-transformers · FastAPI · Pydantic · Streamlit · Docker Compose
+Python · Claude (Claude Agent SDK) · MCP · PostgreSQL · pgvector · sentence-transformers · FastAPI · Pydantic · HTML / CSS / JavaScript · Docker Compose · pytest · ruff · GitHub Actions
