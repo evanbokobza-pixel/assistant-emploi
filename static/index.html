@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assistant emploi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="marque" href="#offres">Assistant emploi</a>
+      <div class="nav-liens">
+        <a href="#analyser" data-page="analyser">Analyser une offre</a>
+        <a href="#offres" data-page="offres">Mes offres</a>
+        <a href="#assistant" data-page="assistant">Poser une question</a>
+        <a href="#cv" data-page="cv">Mon CV</a>
+      </div>
+      <a class="nav-api" href="/docs" target="_blank" rel="noopener">Documentation de l'API</a>
+    </nav>
+    <main id="contenu"></main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -3,8 +3,10 @@ from pydantic import BaseModel
 from db import get_connection
 from analyse import analyser, enregistrer
 from agent import demander
-from fastapi.responses import RedirectResponse
-
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
+from pydantic import BaseModel, Field
 
 
 
@@ -23,8 +25,8 @@ class Question(BaseModel):
 
 @app.get("/", include_in_schema=False)
 def accueil():
-    # L'adresse seule redirige vers la documentation
-    return RedirectResponse("/docs")
+    # L'adresse seule affiche le site
+    return FileResponse("static/index.html")
 
 
 @app.get("/offres")
@@ -76,7 +78,7 @@ async def ajouter_offre(offre: NouvelleOffre):
         raise HTTPException(status_code=502, detail=f"Échec de l'analyse : {e}")
     id_offre = enregistrer(texte, resultat)
     return {"id": id_offre, "analyse": resultat}
-    
+
 
 @app.delete("/offres/{id_offre}", status_code=204)
 def supprimer_offre(id_offre: int):
@@ -97,3 +99,32 @@ async def interroger_agent(q: Question):
     except Exception as e:
         # Comme pour l'analyse : si Claude échoue, c'est une 502, pas un plantage
         raise HTTPException(status_code=502, detail=f"L'agent a échoué : {e}")
+    
+
+
+CV = Path(__file__).parent / "data" / "parcours" / "cv.md"
+
+
+class NouveauCV(BaseModel):
+    texte: str = Field(min_length=50, max_length=20000)
+
+
+@app.get("/cv")
+def lire_cv():
+    if not CV.exists():
+        raise HTTPException(status_code=404, detail="CV introuvable")
+    return {"texte": CV.read_text(encoding="utf-8")}
+
+
+@app.put("/cv")
+def modifier_cv(cv: NouveauCV):
+    # On garde l'ancienne version, au cas où
+    if CV.exists():
+        CV.with_suffix(".md.bak").write_text(CV.read_text(encoding="utf-8"), encoding="utf-8")
+    texte = cv.texte.strip()
+    CV.write_text(texte + "\n", encoding="utf-8")
+    return {"texte": texte}
+
+    
+# Les fichiers du site (CSS, JavaScript) sont servis sous /static
+app.mount("/static", StaticFiles(directory="static"), name="static")

@@ -81,7 +81,7 @@ def lire_preferences():
 
 
 def construire_prompt(offre):
-    cv = Path("data/parcours/cv.md").read_text(encoding="utf-8")
+    cv = (Path(__file__).parent / "data" / "parcours" / "cv.md").read_text(encoding="utf-8")
     passages = rechercher(offre, exclure=["cv"])
     parcours = "\n\n".join(
         f'<passage source="{source}">\n{contenu}\n</passage>'
