@@ -9,6 +9,28 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+      # Exécuté automatiquement au tout premier démarrage (base vide)
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app:
+    build: .
+    env_file: .env
+    environment:
+      POSTGRES_HOST: db          # dans Docker, la base s'appelle « db »
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data                     # ton CV modifié sur le site reste sur ton disque
+      - hf_cache:/root/.cache/huggingface    # le modèle d'embeddings, téléchargé une seule fois
+    depends_on:
+      db:
+        condition: service_healthy           # attend que la base soit prête
 
 volumes:
   pgdata:
+  hf_cache:
